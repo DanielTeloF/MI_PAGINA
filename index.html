@@ -3,72 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Juan Pérez</title>
+    <title>Inicio | Daniel Telo</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div class="min-h-screen bg-white text-gray-900 font-sans">
-      <header class="flex justify-between items-center p-6 shadow-md">
-        <h1 class="text-2xl font-bold">Juan Pérez</h1>
-        <div class="relative">
-          <button class="peer px-4 py-2 bg-gray-100 rounded hover:bg-gray-200">
-            Menú
-          </button>
-          <div
-            class="hidden peer-hover:flex hover:flex flex-col absolute right-0 mt-2 bg-white border rounded shadow-md z-10"
-          >
-            <a href="#proyectos" class="px-4 py-2 hover:bg-gray-100">Proyectos</a>
-            <a href="#sobremi" class="px-4 py-2 hover:bg-gray-100">Sobre mí</a>
-            <a href="#contacto" class="px-4 py-2 hover:bg-gray-100">Contacto</a>
-            <a href="#cv" class="px-4 py-2 hover:bg-gray-100">Descargar CV</a>
-          </div>
-        </div>
-      </header>
+  <body class="bg-white text-gray-800 font-sans">
+    <header class="fixed w-full bg-white shadow z-50">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold tracking-wide">Daniel Telo</h1>
+        <nav class="space-x-4">
+          <a href="#sobremi" class="hover:text-green-600">Sobre mí</a>
+          <a href="#proyectos" class="hover:text-green-600">Proyectos</a>
+          <a href="#contacto" class="hover:text-green-600">Contacto</a>
+        </nav>
+      </div>
+    </header>
 
-      <section class="text-center py-20 px-6 bg-gray-50">
-        <img
-          src="https://via.placeholder.com/150"
-          alt="Foto de perfil"
-          class="mx-auto mb-6 rounded-full w-32 h-32 object-cover"
-        />
-        <h2 class="text-4xl font-semibold mb-2">Juan Pérez</h2>
-        <p class="text-lg max-w-xl mx-auto">
-          Ingeniero ambiental con experiencia en sistemas de información geográfica, análisis de datos satelitales y desarrollo de herramientas interactivas para visualización de datos.
+    <section class="h-screen bg-cover bg-center flex items-center justify-center text-center text-white" style="background-image: url('https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1350&q=80');">
+      <div class="bg-black bg-opacity-50 p-10 rounded">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Soluciones Ambientales e Información Geográfica</h2>
+        <p class="text-lg max-w-2xl mx-auto">Proyectos, análisis y visualizaciones interactivas para la gestión del territorio y el medio ambiente.</p>
+      </div>
+    </section>
+
+    <section id="sobremi" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-3xl font-semibold mb-6">Sobre mí</h3>
+        <p class="text-lg text-gray-700">
+          Soy Daniel Telo, profesional del ámbito ambiental y geoespacial. Me especializo en la creación de herramientas visuales para comunicar datos espaciales de forma clara y accesible. Trabajo con tecnologías como Leaflet, QGIS, Python y plataformas web interactivas.
         </p>
-      </section>
+      </div>
+    </section>
 
-      <section id="proyectos" class="py-16 px-6">
-        <h3 class="text-2xl font-bold mb-6">Proyectos</h3>
-        <div class="bg-gray-100 p-4 rounded shadow-md">
-          <h4 class="text-xl font-semibold mb-2">Mapa NDVI interactivo de Baena (Córdoba)</h4>
+    <section id="proyectos" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-3xl font-semibold mb-6">Proyectos</h3>
+        <div class="bg-white p-6 rounded shadow border">
+          <h4 class="text-2xl font-bold mb-2">NDVI de Baena (Córdoba)</h4>
           <p class="text-gray-700 mb-4">
-            Proyecto interactivo que muestra la evolución del índice de vegetación NDVI utilizando imágenes satelitales. Explóralo directamente aquí abajo.
+            Visualización interactiva del índice de vegetación para el municipio de Baena. Desarrollo completo del visor con datos satelitales y geoespaciales.
           </p>
-          <iframe
-            src="https://danieltelof.github.io/portfolio/"
-            class="w-full h-[600px] border rounded"
-            title="Mapa NDVI interactivo de Baena"
-          ></iframe>
+          <a
+            href="https://danieltelof.github.io/portfolio/"
+            target="_blank"
+            class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
+          >
+            Ver visor interactivo
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="sobremi" class="py-16 px-6 bg-gray-50">
-        <h3 class="text-2xl font-bold mb-4">Sobre mí</h3>
-        <p class="max-w-3xl text-gray-700">
-          Soy un profesional apasionado por el análisis de datos ambientales y el desarrollo de soluciones geoespaciales. Me especializo en el uso de herramientas como QGIS, Leaflet y Python para transformar datos complejos en aplicaciones accesibles.
-        </p>
-      </section>
+    <section id="contacto" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-3xl font-semibold mb-6">Contacto</h3>
+        <p class="text-gray-700 mb-2">📧 Email: danieltelo@example.com</p>
+        <p class="text-gray-700">🔗 LinkedIn: linkedin.com/in/danieltelo</p>
+      </div>
+    </section>
 
-      <section id="contacto" class="py-16 px-6">
-        <h3 class="text-2xl font-bold mb-4">Contacto</h3>
-        <p>Email: juanperez@example.com</p>
-        <p>LinkedIn: linkedin.com/in/juanperez</p>
-      </section>
-
-      <section id="cv" class="py-16 px-6 bg-gray-50">
-        <h3 class="text-2xl font-bold mb-4">CV</h3>
-        <a href="#" class="text-blue-600 hover:underline">Descargar CV en PDF</a>
-      </section>
-    </div>
+    <footer class="text-center py-6 text-sm text-gray-500 border-t">
+      &copy; 2025 Daniel Telo. Todos los derechos reservados.
+    </footer>
   </body>
 </html>
