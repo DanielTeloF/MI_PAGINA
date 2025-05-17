@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Telo | Soluciones Ambientales y SIG</title>
+    <title>Daniel Telo | SIG y Medio Ambiente</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,69 +14,67 @@
       }
     </style>
   </head>
-  <body class="bg-white text-gray-800">
+  <body class="bg-zinc-900 text-white">
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <header class="fixed top-0 left-0 w-full bg-zinc-950 shadow z-50">
       <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-xl font-bold text-green-700">Daniel Telo</h1>
+        <h1 class="text-xl font-bold text-green-500">Daniel Telo</h1>
         <nav class="space-x-6 text-sm font-medium">
-          <a href="#inicio" class="hover:text-green-600">Inicio</a>
-          <a href="#sobremi" class="hover:text-green-600">Sobre mí</a>
-          <a href="#proyectos" class="hover:text-green-600">Proyectos</a>
-          <a href="#contacto" class="hover:text-green-600">Contacto</a>
+          <a href="#inicio" class="hover:text-green-400">Inicio</a>
+          <a href="#sobremi" class="hover:text-green-400">Sobre mí</a>
+          <a href="#proyectos" class="hover:text-green-400">Proyectos</a>
+          <a href="#contacto" class="hover:text-green-400">Contacto</a>
         </nav>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="h-screen bg-cover bg-center relative flex items-center justify-center text-white" style="background-image: url('https://images.unsplash.com/photo-1576435054692-68b152b2f6f2?auto=format&fit=crop&w=1950&q=80');">
+    <section id="inicio" class="h-screen bg-cover bg-center relative flex items-center justify-center text-white" style="background-image: url('/mnt/data/A_personal_portfolio_website_screenshot_for_Daniel.png');">
       <div class="absolute inset-0 bg-black opacity-60"></div>
       <div class="relative z-10 text-center px-6">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Soluciones Ambientales y Tecnologías Geoespaciales</h2>
-        <p class="text-lg max-w-2xl mx-auto">Especializado en análisis espacial, datos satelitales y desarrollo de herramientas interactivas para el medio ambiente.</p>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Explorando la naturaleza digitalmente</h2>
+        <p class="text-lg max-w-2xl mx-auto">SIG · NDVI · Medio Ambiente · Python · SQL</p>
       </div>
     </section>
 
     <!-- Sobre mí -->
-    <section id="sobremi" class="py-24 px-6 bg-gray-50">
+    <section id="sobremi" class="py-24 px-6 bg-zinc-900">
       <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-3xl font-semibold mb-6 text-green-700">Sobre mí</h3>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Soy un profesional con experiencia en ingeniería ambiental y sistemas de información geográfica. Me enfoco en desarrollar soluciones digitales que integren análisis espacial con accesibilidad web. Trabajo con herramientas como Leaflet, QGIS, Python y tecnologías modernas para crear aplicaciones centradas en datos ambientales y territoriales.
+        <h3 class="text-3xl font-semibold mb-6 text-green-400">Sobre mí</h3>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+          Estudiante de Ingeniería Agroambiental con gran interés en los SIG y el desarrollo sostenible. Apasionado por el medio ambiente y la resolución de problemas, con conocimientos en herramientas como Python y SQL.
         </p>
       </div>
     </section>
 
     <!-- Proyectos -->
-    <section id="proyectos" class="py-24 px-6">
+    <section id="proyectos" class="py-24 px-6 bg-zinc-950">
       <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-3xl font-semibold mb-10 text-green-700">Proyectos</h3>
+        <h3 class="text-3xl font-semibold mb-10 text-green-400">Proyectos</h3>
         <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-white border rounded-lg shadow p-6 text-left">
-            <h4 class="text-xl font-bold mb-2">Visor NDVI de Baena (Córdoba)</h4>
-            <p class="text-gray-700 mb-4">Análisis temporal del índice de vegetación con datos satelitales e implementación de visor interactivo desarrollado con Leaflet y GeoJSON.</p>
+          <div class="bg-zinc-800 border border-zinc-700 rounded-lg shadow p-6 text-left">
+            <h4 class="text-xl font-bold mb-2 text-white">NDVI de Baena (Córdoba)</h4>
+            <p class="text-gray-400 mb-4">Análisis temporal del índice de vegetación con datos satelitales e implementación de visor interactivo desarrollado con Leaflet y GeoJSON.</p>
             <a href="https://danieltelof.github.io/portfolio/" target="_blank" class="inline-block mt-2 text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded transition">Ver visor</a>
           </div>
-          <!-- Espacio reservado para más proyectos -->
-          <div class="bg-white border rounded-lg shadow p-6 text-left opacity-50 cursor-not-allowed">
-            <h4 class="text-xl font-bold mb-2">Próximamente</h4>
-            <p class="text-gray-700">Nuevo proyecto en desarrollo...</p>
+          <div class="bg-zinc-800 border border-zinc-700 rounded-lg shadow p-6 text-left flex items-center justify-center text-gray-500 italic">
+            Próximamente
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="py-24 px-6 bg-gray-50">
+    <section id="contacto" class="py-24 px-6 bg-zinc-900">
       <div class="max-w-3xl mx-auto text-center">
-        <h3 class="text-3xl font-semibold mb-6 text-green-700">Contacto</h3>
-        <p class="text-gray-700 text-lg mb-2">📧 Email: <a href="mailto:danieltelo@example.com" class="text-green-600 hover:underline">danieltelo@example.com</a></p>
-        <p class="text-gray-700 text-lg">🔗 LinkedIn: <a href="https://linkedin.com/in/danieltelo" target="_blank" class="text-green-600 hover:underline">linkedin.com/in/danieltelo</a></p>
+        <h3 class="text-3xl font-semibold mb-6 text-green-400">Contacto</h3>
+        <p class="text-gray-300 text-lg mb-2">📧 Email: <a href="mailto:Danieltelof@gmail.com" class="text-green-400 hover:underline">Danieltelof@gmail.com</a></p>
+        <p class="text-gray-300 text-lg">🔗 LinkedIn: <a href="https://www.linkedin.com/in/daniel-telo-fernandez" target="_blank" class="text-green-400 hover:underline">daniel-telo-fernandez</a></p>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-6 text-sm text-gray-500 border-t">
+    <footer class="text-center py-6 text-sm text-gray-500 border-t border-zinc-800">
       &copy; 2025 Daniel Telo. Todos los derechos reservados.
     </footer>
   </body>
