@@ -1,196 +1,461 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Telo | SIG y Medio Ambiente</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://unpkg.com/alpinejs" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Daniel Telo | SIG y Medio Ambiente
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script defer="" src="https://unpkg.com/alpinejs">
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   [x-cloak] { display: none !important; }
       body {
         font-family: 'Inter', sans-serif;
       }
-    </style>
-  </head>
-  <body class="bg-zinc-900 text-white">
-    <!-- Header -->
-    <header class="fixed top-0 left-0 w-full bg-zinc-950 shadow z-50">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-xl font-bold text-green-500">Daniel Telo</h1>
-        <nav class="space-x-6 text-sm font-medium">
-          <a href="#inicio" class="hover:text-green-400">Inicio</a>
-          <a href="#sobremi" class="hover:text-green-400">Sobre mí</a>
-          <a href="#proyectos" class="hover:text-green-400">Proyectos</a>
-          <a href="#contacto" class="hover:text-green-400">Contacto</a>
-        </nav>
+  </style>
+ </head>
+ <body class="bg-zinc-900 text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-zinc-950 shadow z-50">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-green-500">
+     Daniel Telo
+    </h1>
+    <nav class="space-x-6 text-sm font-medium">
+     <a class="hover:text-green-400" href="#inicio">
+      Inicio
+     </a>
+     <a class="hover:text-green-400" href="#sobremi">
+      Sobre mí
+     </a>
+     <a class="hover:text-green-400" href="#proyectos">
+      Proyectos
+     </a>
+     <a class="hover:text-green-400" href="#contacto">
+      Contacto
+     </a>
+    </nav>
+   </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="h-screen bg-cover bg-center relative flex items-center justify-center text-white" id="inicio" style="background-image: url('hero-banner.png'); background-size: cover; background-position: center;">
+   <div class="absolute inset-0 bg-black opacity-60">
+   </div>
+   <div class="relative z-10 text-center px-6">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+     Datos para entender el territorio
+    </h2>
+    <p class="text-lg max-w-2xl mx-auto">
+     SIG · NDVI · Medio Ambiente · Python · SQL
+    </p>
+   </div>
+  </section>
+  <!-- Sobre mí en formato rejilla vertical -->
+  <section class="py-24 px-6 bg-zinc-900" id="sobremi">
+   <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold mb-10 text-center text-green-400">
+     Sobre mí
+    </h3>
+    <div class="grid gap-10">
+     <!-- Bloque 1 -->
+     <div class="grid md:grid-cols-2 gap-6 items-center">
+      <div>
+       <h4 class="text-green-400 font-semibold text-xl mb-2">
+        Estudiante de Ingeniería Agroambiental
+       </h4>
+       <p class="text-gray-300 text-sm">
+        Formación en medio ambiente y tecnologías aplicadas al territorio.
+       </p>
       </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="inicio" class="h-screen bg-cover bg-center relative flex items-center justify-center text-white" style="background-image: url('hero-banner.png'); background-size: cover; background-position: center;">
-      <div class="absolute inset-0 bg-black opacity-60"></div>
-      <div class="relative z-10 text-center px-6">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Datos para entender el territorio</h2>
-        <p class="text-lg max-w-2xl mx-auto">SIG · NDVI · Medio Ambiente · Python · SQL</p>
+      <img alt="Bombilla con planta en entorno degradado" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="ingenieria-agroambiental.png"/>
+     </div>
+     <!-- Bloque 2 -->
+     <div class="grid md:grid-cols-2 gap-6 items-center">
+      <img alt="Análisis SIG, cartografía y teledetección" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover mr-auto" src="sig-cartografia.png"/>
+      <div>
+       <h4 class="text-green-400 font-semibold text-xl mb-2">
+        SIG y análisis espacial
+       </h4>
+       <p class="text-gray-300 text-sm">
+        Gran interés por la cartografía, teledetección y visualización de datos geográficos.
+       </p>
       </div>
-    </section>
-
-    <!-- Sobre mí en formato rejilla vertical -->
-    <section id="sobremi" class="py-24 px-6 bg-zinc-900">
-      <div class="max-w-6xl mx-auto">
-        <h3 class="text-3xl font-semibold mb-10 text-center text-green-400">Sobre mí</h3>
-        <div class="grid gap-10">
-
-          <!-- Bloque 1 -->
-	<div class="grid md:grid-cols-2 gap-6 items-center">
-  		<div>
-  	  <h4 class="text-green-400 font-semibold text-xl mb-2">Estudiante de Ingeniería Agroambiental</h4>
-	    <p class="text-gray-300 text-sm">Formación en medio ambiente y tecnologías aplicadas al territorio.</p>
-	  </div>
-	  <img src="ingenieria-agroambiental.png" alt="Bombilla con planta en entorno degradado"
- 	   class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" />
-	</div>
-
-
-          <!-- Bloque 2 -->
-	<div class="grid md:grid-cols-2 gap-6 items-center">
- 	 <img src="sig-cartografia.png" alt="Análisis SIG, cartografía y teledetección"
-  	  class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover mr-auto" />
- 	 <div>
- 	   <h4 class="text-green-400 font-semibold text-xl mb-2">SIG y análisis espacial</h4>
- 	   <p class="text-gray-300 text-sm">Gran interés por la cartografía, teledetección y visualización de datos geográficos.</p>
- 	 </div>
-	</div>
-
-
-          <!-- Bloque 3 -->
-	<div class="grid md:grid-cols-2 gap-6 items-center">
- 	 <div>
- 	   <h4 class="text-green-400 font-semibold text-xl mb-2">Desarrollo sostenible</h4>
- 	   <p class="text-gray-300 text-sm">Comprometido con soluciones ambientales equilibradas y eficientes.</p>
-	  </div>
- 	 <img src="desarrollo-sostenible.png" alt="Placas solares y cabras pastando - desarrollo sostenible"
- 	   class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" />
-	</div>
-
-
-          <!-- Bloque 4 -->
-	<div class="grid md:grid-cols-2 gap-6 items-center">
-  	<img src="python-sql.png" alt="Código Python y SQL en pantalla"
-  	  class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover mr-auto" />
- 	 <div>
- 	   <h4 class="text-green-400 font-semibold text-xl mb-2">Python y SQL</h4>
- 	   <p class="text-gray-300 text-sm">Conocimientos aplicados a automatización y análisis de datos espaciales.</p>
-	  </div>
-	</div>
-
-
-          <!-- Bloque 5 -->
-	<div class="grid md:grid-cols-2 gap-6 items-center">
-	  <div>
-	    <h4 class="text-green-400 font-semibold text-xl mb-2">Resolución de problemas</h4>
-	    <p class="text-gray-300 text-sm">Perfil analítico, proactivo y con orientación a resultados.</p>
-	  </div>
- 	 <img src="resolucion-problemas.png" alt="Espacio de trabajo con terminales y análisis de datos"
- 	   class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" />
-	</div>
-        </div>
+     </div>
+     <!-- Bloque 3 -->
+     <div class="grid md:grid-cols-2 gap-6 items-center">
+      <div>
+       <h4 class="text-green-400 font-semibold text-xl mb-2">
+        Desarrollo sostenible
+       </h4>
+       <p class="text-gray-300 text-sm">
+        Comprometido con soluciones ambientales equilibradas y eficientes.
+       </p>
       </div>
-    </section>
-
-    <!-- Proyectos destacados -->
-<section id="proyectos" class="py-24 px-6 bg-zinc-950">
-  <div class="max-w-6xl mx-auto">
-    <h3 class="text-3xl font-semibold mb-16 text-green-400 text-center">Proyectos destacados</h3>
-
+      <img alt="Placas solares y cabras pastando - desarrollo sostenible" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="desarrollo-sostenible.png"/>
+     </div>
+     <!-- Bloque 4 -->
+     <div class="grid md:grid-cols-2 gap-6 items-center">
+      <img alt="Código Python y SQL en pantalla" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover mr-auto" src="python-sql.png"/>
+      <div>
+       <h4 class="text-green-400 font-semibold text-xl mb-2">
+        Python y SQL
+       </h4>
+       <p class="text-gray-300 text-sm">
+        Conocimientos aplicados a automatización y análisis de datos espaciales.
+       </p>
+      </div>
+     </div>
+     <!-- Bloque 5 -->
+     <div class="grid md:grid-cols-2 gap-6 items-center">
+      <div>
+       <h4 class="text-green-400 font-semibold text-xl mb-2">
+        Resolución de problemas
+       </h4>
+       <p class="text-gray-300 text-sm">
+        Perfil analítico, proactivo y con orientación a resultados.
+       </p>
+      </div>
+      <img alt="Espacio de trabajo con terminales y análisis de datos" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="resolucion-problemas.png"/>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Proyectos destacados -->
+  <section class="py-24 px-6 bg-zinc-950" id="proyectos">
+   <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold mb-16 text-green-400 text-center">
+     Proyectos destacados
+    </h3>
     <!-- Proyecto 1 con imagen a la derecha -->
     <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-center">
-      <!-- Texto -->
-      <div class="col-span-3">
-        <h4 class="text-2xl font-bold text-white mb-2">NDVI de Baena (Córdoba)</h4>
-        <p class="text-gray-300 text-base mb-4">
-          Este proyecto analiza el índice de vegetación NDVI a partir de imágenes satelitales Sentinel-2 en la zona agrícola de Baena (Córdoba).<br><br>
-Se trabajó con aproximadamente 1.000 recintos seleccionados a partir de los polígonos catastrales del 1 al 8, excluyendo aquellos cuya superficie era inferior a 1.000 m² para centrarse en unidades agrícolas relevantes.<br><br>
-Las bandas espectrales B04 (rojo) y B08 (infrarrojo cercano) fueron procesadas mediante la fórmula estándar del NDVI. El resultado fue el cálculo del valor medio de NDVI por parcela para varias fechas a lo largo de la campaña. Estos valores se integraron como atributos dentro del SIGPAC para cada recinto, permitiendo un análisis espacial coherente. Además, se automatizó con Python la generación de gráficos temporales de NDVI por parcela. La visualización final se integra en una aplicación web interactiva mediante Leaflet.<br><br>
-La integración de datos satelitales con herramientas geoespaciales y automatización en Python demuestra el potencial del análisis espacial aplicado al territorio.
-
-
+     <!-- Texto -->
+     <div class="col-span-3">
+      <h4 class="text-2xl font-bold text-white mb-2">
+       NDVI de Baena (Córdoba)
+      </h4>
+      <p class="text-gray-300 text-base mb-4">
+       Este proyecto analiza el índice de vegetación NDVI a partir de imágenes satelitales Sentinel-2 en la zona agrícola de Baena (Córdoba).
+       <br/>
+       <br/>
+       Se trabajó con aproximadamente 1.000 recintos seleccionados a partir de los polígonos catastrales del 1 al 8, excluyendo aquellos cuya superficie era inferior a 1.000 m² para centrarse en unidades agrícolas relevantes.
+       <br/>
+       <br/>
+       Las bandas espectrales B04 (rojo) y B08 (infrarrojo cercano) fueron procesadas mediante la fórmula estándar del NDVI. El resultado fue el cálculo del valor medio de NDVI por parcela para varias fechas a lo largo de la campaña. Estos valores se integraron como atributos dentro del SIGPAC para cada recinto, permitiendo un análisis espacial coherente. Además, se automatizó con Python la generación de gráficos temporales de NDVI por parcela. La visualización final se integra en una aplicación web interactiva mediante Leaflet.
+       <br/>
+       <br/>
+       La integración de datos satelitales con herramientas geoespaciales y automatización en Python demuestra el potencial del análisis espacial aplicado al territorio.
+      </p>
+      <a class="inline-block text-white bg-green-600 hover:bg-green-700 px-5 py-2 rounded-md transition" href="https://danieltelof.github.io/portfolio/" target="_blank">
+       Ver visor interactivo
+      </a>
+     </div>
+     <!-- Imagen -->
+     <div class="col-span-1">
+      <img alt="Visual NDVI Baena" class="rounded-lg shadow-md w-full h-auto object-cover" src="ndvi-baena-proyecto.png"/>
+     </div>
+    </div>
+    <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
+     <div class="col-span-3">
+      <h3 class="text-xl font-semibold mb-2">
+       Estimación de CO₂ equivalente tras el incendio de Las Hurdes
+      </h3>
+      <p class="text-zinc-400 mb-4">
+       Este proyecto evalúa el impacto del incendio forestal ocurrido en mayo de 2023 en la comarca de Las Hurdes (Cáceres), mediante el análisis de imágenes Sentinel-2 y datos LiDAR del PNOA. A través del cálculo de índices espectrales y modelos digitales de altura, se delimitó el área afectada y se estimó la pérdida de vegetación.
+       <br/>
+       <br/>
+       El objetivo principal fue estimar la cantidad de CO₂ equivalente que podría capturarse si se reforestara toda la superficie quemada, teniendo en cuenta la estructura forestal previa y aplicando criterios técnicos de biomasa aérea.
+      </p>
+      <div x-show="expanded" x-transition="">
+       <!-- Imágenes Sentinel -->
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+        <div>
+         <img alt="Antes del incendio" src="sentinel_2023-04-11.png"/>
+         <p class="text-center text-sm text-gray-400 mt-2">
+          Antes del incendio (11/04/2023)
+         </p>
+        </div>
+        <div>
+         <img alt="Durante el incendio" src="sentinel_2023-05-19.png"/>
+         <p class="text-center text-sm text-gray-400 mt-2">
+          Durante el incendio (19/05/2023)
+         </p>
+        </div>
+        <div>
+         <img alt="Después del incendio" src="sentinel_2023-06-25.png"/>
+         <p class="text-center text-sm text-gray-400 mt-2">
+          Después del incendio (25/06/2023)
+         </p>
+        </div>
+       </div>
+       <!-- dNBR y leyenda -->
+       <p class="text-zinc-400 text-sm mb-6">
+        Las imágenes multitemporales de Sentinel-2 permitieron calcular el índice dNBR (Normalized Burn Ratio Difference), que identifica las zonas afectadas por el fuego a partir de variaciones espectrales. Esta metodología permitió cuantificar la severidad del incendio y estimar la superficie quemada.
+       </p>
+       <div class="flex flex-col md:flex-row items-start gap-6 my-8">
+        <div class="flex-1">
+         <img alt="Mapa dNBR Las Hurdes" class="w-full max-w-full rounded shadow-md" src="dnbr_lashurdes.png"/>
+         <p class="text-center text-sm text-gray-400 mt-2">
+          Mapa de severidad del incendio (dNBR)
+         </p>
+        </div>
+        <div class="w-full md:w-auto flex justify-center">
+         <img alt="Leyenda dNBR" class="w-48 md:w-52 rounded" src="dnbr_leyenda.png"/>
+        </div>
+       </div>
+       <p class="text-zinc-400 text-sm mb-6">
+        Según la clasificación de severidad, se estimó que el incendio afectó una superficie aproximada de
+        <strong>
+         10.700 hectáreas
+        </strong>
+        .
+       </p>
+       <!-- LiDAR comparativo -->
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start my-10">
+        <div class="flex flex-col items-center">
+         <img alt="LiDAR zona quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="lidar_zona_incendio.png"/>
+         <p class="text-center text-sm text-gray-400 mt-2">
+          Datos LiDAR – Zona quemada
+         </p>
+        </div>
+        <div class="flex flex-col items-center">
+         <img alt="LiDAR zona no quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="lidar_zona_referencia.png"/>
+         <p class="text-center text-sm text-gray-400 mt-2">
+          Datos LiDAR – Zona no quemada
+         </p>
+        </div>
+       </div>
+       <div class="text-sm text-zinc-400 leading-relaxed max-w-4xl mx-auto">
+        <p>
+         Los datos LiDAR del PNOA se utilizaron para comparar la estructura vertical entre una zona afectada por el fuego y otra de referencia. En la primera, los puntos aparecen más planos y uniformes, reflejando la pérdida total del dosel. En la segunda, se observa una distribución irregular propia de bosques maduros con cobertura frondosa.
         </p>
-        <a href="https://danieltelof.github.io/portfolio/" target="_blank"
-           class="inline-block text-white bg-green-600 hover:bg-green-700 px-5 py-2 rounded-md transition">
-          Ver visor interactivo
-        </a>
+       </div>
+       <!-- CHM + análisis -->
+       <p class="text-zinc-400 text-sm mt-10 mb-4">
+        A partir del MDT (clase 2 - ground) y del MDS (máximo por celda), se generó el CHM (Canopy Height Model), que representa la altura de la vegetación. A continuación se comparan ambos modelos:
+       </p>
+       <!-- CHM imágenes y leyendas -->
+       <div class="my-10 flex flex-col gap-6">
+        <p class="text-sm text-zinc-400 leading-relaxed text-center">
+         Comparativa entre la altura media del dosel en la zona quemada y no quemada.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start justify-center">
+         <div class="md:col-span-2 flex flex-col items-center">
+          <img alt="CHM zona quemada" class="w-full max-w-[420px] rounded shadow-md" src="chr_incendio.png"/>
+          <p class="text-center text-sm text-gray-400 mt-2">
+           CHM – Zona quemada
+          </p>
+         </div>
+         <div class="flex justify-start items-start">
+          <img alt="Leyenda CHM zona quemada" class="w-20 md:w-20 rounded" src="chr_leyenda_incendio.png"/>
+         </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start justify-center mt-10">
+         <div class="md:col-span-2 flex flex-col items-center">
+          <img alt="CHM zona no quemada" class="w-full max-w-[420px] rounded shadow-md" src="chr_referencia.png"/>
+          <p class="text-center text-sm text-gray-400 mt-2">
+           CHM – Zona no quemada
+          </p>
+         </div>
+         <div class="flex justify-start items-start">
+          <img alt="Leyenda CHM zona no quemada" class="w-20 md:w-20 rounded" src="chr_leyenda_referencia.png"/>
+         </div>
+        </div>
+       </div>
+       <!-- Resultados y estimaciones -->
+       <div class="bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mt-12">
+        <h4 class="text-xl font-semibold text-green-400 mb-4">
+         Estimación de CO₂ equivalente capturable
+        </h4>
+        <p class="text-sm text-gray-300 mb-6">
+         En la zona de referencia se registró una altura media de vegetación de
+         <strong>
+          5,21 m
+         </strong>
+         , frente a
+         <strong>
+          1,77 m
+         </strong>
+         en la zona incendiada. La similitud en la desviación estándar (3,5 m) indica que la estructura vertical original fue sustancialmente degradada.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
+         <div class="bg-zinc-900 p-4 rounded shadow">
+          <p>
+           <strong>
+            Zona no quemada:
+           </strong>
+          </p>
+          <ul class="list-disc list-inside">
+           <li>
+            Altura media:
+            <strong>
+             5,21 m
+            </strong>
+           </li>
+           <li>
+            Desviación estándar: 3,5 m
+           </li>
+          </ul>
+         </div>
+         <div class="bg-zinc-900 p-4 rounded shadow">
+          <p>
+           <strong>
+            Zona quemada:
+           </strong>
+          </p>
+          <ul class="list-disc list-inside">
+           <li>
+            Altura media:
+            <strong>
+             1,77 m
+            </strong>
+           </li>
+           <li>
+            Desviación estándar: 3,5 m
+           </li>
+          </ul>
+         </div>
+        </div>
+        <hr class="my-6 border-zinc-700"/>
+        <h5 class="text-green-400 font-semibold mb-2">
+         Modelo de cálculo
+        </h5>
+        <p class="text-sm text-gray-300 mb-4">
+         Se asumió un marco de plantación de 3x3 m (≈1.100 árboles/ha) y una biomasa aérea por árbol de 63 kg (_Pinus pinaster_, según IFN). Se aplicaron factores estándar para estimar el contenido de carbono y su equivalencia en CO₂.
+        </p>
+        <div class="bg-zinc-900 p-4 rounded text-sm text-gray-300">
+         <p>
+          <strong>
+           Por hectárea:
+          </strong>
+         </p>
+         <p>
+          1.100 árboles × 63 kg =
+          <strong>
+           69.300 kg de biomasa
+          </strong>
+         </p>
+         <p>
+          → Carbono: 69.300 × 0,5 =
+          <strong>
+           34.650 kg C
+          </strong>
+         </p>
+         <p>
+          → CO₂eq: 34.650 × 3,67 =
+          <strong>
+           127,27 t CO₂eq/ha
+          </strong>
+         </p>
+        </div>
+        <p class="text-sm text-gray-300 mt-6">
+         <strong>
+          Escalado a toda la superficie quemada (10.700 ha):
+         </strong>
+        </p>
+        <div class="bg-zinc-900 p-4 rounded text-sm text-gray-300">
+         <p>
+          127,27 × 10.700 =
+          <strong class="text-green-400">
+           1.361.789 toneladas de CO₂eq
+          </strong>
+         </p>
+        </div>
+        <p class="text-sm text-gray-400 mt-6 italic">
+         Nota: Se trata de una estimación aproximada basada en modelos simplificados. La biomasa real puede variar según la edad del bosque, el manejo forestal, densidad efectiva de arbolado y regeneración post-incendio.
+        </p>
+       </div>
+       <!-- Citas -->
+       <div class="text-sm text-gray-400 mt-12 max-w-4xl mx-auto border-t border-zinc-700 pt-6">
+        <h5 class="text-green-400 font-semibold mb-2">
+         Fuentes y herramientas utilizadas
+        </h5>
+        <ul class="list-disc list-inside">
+         <li>
+          <strong>
+           Sentinel Hub / Copernicus Browser:
+          </strong>
+          imágenes satelitales
+         </li>
+         <li>
+          <strong>
+           ArcGIS Pro:
+          </strong>
+          análisis SIG, NDVI, NBR, CHM
+         </li>
+         <li>
+          <strong>
+           PNOA - CNIG:
+          </strong>
+          datos LiDAR oficiales
+         </li>
+         <li>
+          <strong>
+           MITECO / IFN:
+          </strong>
+          factores de biomasa forestal y carbono
+         </li>
+         <li>
+          <strong>
+           HTML, TailwindCSS y Alpine.js:
+          </strong>
+          desarrollo web
+         </li>
+        </ul>
+       </div>
       </div>
-
-      <!-- Imagen -->
-      <div class="col-span-1">
-        <img src="ndvi-baena-proyecto.png" alt="Visual NDVI Baena"
-     class="rounded-lg shadow-md w-full h-auto object-cover" />
-
-      </div>
+      <button @click="expanded = !expanded" class="mt-4 text-green-400 hover:text-green-300 transition font-semibold">
+       <span x-show="!expanded">
+        Mostrar más ↓
+       </span>
+       <span x-show="expanded">
+        Mostrar menos ↑
+       </span>
+      </button>
+     </div>
+     <div class="col-span-1">
+      <img alt="Visualización LiDAR" class="rounded-lg shadow-md w-full h-auto object-cover" src="co2-lidar-bosque.png">
+      </img>
+     </div>
     </div>
- <!-- Proyecto 2: Incendio Las Hurdes -->
-          <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
-            <div class="col-span-3">
-              <h3 class="text-xl font-semibold mb-2">Estimación de CO₂ equivalente tras el incendio de Las Hurdes</h3>
-              <p class="text-zinc-400 mb-4">
-                En mayo de 2023, un incendio afectó la comarca de Las Hurdes (Cáceres), arrasando más de 10.000 hectáreas. Este proyecto evalúa su impacto ecológico mediante imágenes Sentinel-2 y datos LiDAR del PNOA.
-              </p>
-              <div x-show="expanded" x-transition>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-                  <div><img src="sentinel_2023-04-11.png" alt="Antes del incendio"><p class="text-center text-sm text-gray-400 mt-2">11/04/2023</p></div>
-                  <div><img src="sentinel_2023-05-19.png" alt="Durante el incendio"><p class="text-center text-sm text-gray-400 mt-2">19/05/2023</p></div>
-                  <div><img src="sentinel_2023-06-25.png" alt="Después del incendio"><p class="text-center text-sm text-gray-400 mt-2">25/06/2023</p></div>
-                </div>
-                <p class="text-zinc-400 text-sm mb-4">
-                  Se calculó el índice NBR y su diferencia entre fechas (dNBR) para clasificar la severidad. Se procesaron datos LiDAR para obtener DTM, DSM y CHM de zonas quemadas y no afectadas.<br><br>
-                  La altura media del dosel en la zona de referencia fue de ~13.6 m, frente a apenas 0.7 m en la zona incendiada. Usando estimaciones de biomasa por m³ y contenido de carbono de <em>Pinus pinaster</em>, se calculó una pérdida potencial de más de 1.000 toneladas de CO₂eq por cada 10 ha afectadas.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-                  <div><img src="chm_zona_referencia.png" alt="CHM referencia"><p class="text-center text-sm text-gray-400 mt-2">CHM – Zona no quemada</p></div>
-                  <div><img src="chm_zona_incendio.png" alt="CHM incendio"><p class="text-center text-sm text-gray-400 mt-2">CHM – Zona quemada</p></div>
-                </div>
-                <div class="my-6">
-                  <img src="dNBR_map.png" alt="Mapa dNBR">
-                  <p class="text-center text-sm text-gray-400 mt-2">Mapa de severidad del incendio según dNBR</p>
-                </div>
-              </div>
-              <button @click="expanded = !expanded" class="mt-4 text-green-400 hover:text-green-300 transition font-semibold">
-                <span x-show="!expanded">Mostrar más ↓</span>
-                <span x-show="expanded">Mostrar menos ↑</span>
-              </button>
-              
-            </div>
-            <div class="col-span-1">
-              <img src="co2-lidar-bosque.png" alt="Visualización LiDAR" class="rounded-lg shadow-md w-full h-auto object-cover" />
-            </div>
-          </div>
-
-    <!-- Proyecto 2 (placeholder) -->
-    <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 text-center text-gray-400 italic">
-      Próximamente: análisis multivariable con Python y geopandas
-    </div>
-
-  </div>
-</section>
-
-
-
-    <!-- Contacto -->
-    <section id="contacto" class="py-24 px-6 bg-zinc-900">
-      <div class="max-w-3xl mx-auto text-center">
-        <h3 class="text-3xl font-semibold mb-6 text-green-400">Contacto</h3>
-        <p class="text-gray-300 text-lg mb-2">📧 Email: <a href="mailto:Danieltelof@gmail.com" class="text-green-400 hover:underline">Danieltelof@gmail.com</a></p>
-        <p class="text-gray-300 text-lg">🔗 LinkedIn: <a href="https://www.linkedin.com/in/daniel-telo-fernandez/" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">daniel-telo-fernandez</a></p>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center py-6 text-sm text-gray-500 border-t border-zinc-800">
-      &copy; 2025 Daniel Telo. Todos los derechos reservados.
-    </footer>
-  </body>
+    <button @click="expanded = !expanded" class="mt-4 text-green-400 hover:text-green-300 transition font-semibold">
+    </button>
+   </div>
+   <div class="col-span-1">
+   </div>
+   <!-- Proyecto 2 (placeholder) -->
+   <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 text-center text-gray-400 italic">
+    Próximamente: análisis multivariable con Python y geopandas
+   </div>
+  </section>
+  <!-- Contacto -->
+  <section class="py-24 px-6 bg-zinc-900" id="contacto">
+   <div class="max-w-3xl mx-auto text-center">
+    <h3 class="text-3xl font-semibold mb-6 text-green-400">
+     Contacto
+    </h3>
+    <p class="text-gray-300 text-lg mb-2">
+     📧 Email:
+     <a class="text-green-400 hover:underline" href="mailto:Danieltelof@gmail.com">
+      Danieltelof@gmail.com
+     </a>
+    </p>
+    <p class="text-gray-300 text-lg">
+     🔗 LinkedIn:
+     <a class="text-green-400 hover:underline" href="https://www.linkedin.com/in/daniel-telo-fernandez/" rel="noopener noreferrer" target="_blank">
+      daniel-telo-fernandez
+     </a>
+    </p>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500 border-t border-zinc-800">
+   © 2025 Daniel Telo. Todos los derechos reservados.
+  </footer>
+ </body>
 </html>
