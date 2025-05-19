@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Telo | SIG y Medio Ambiente</title>
     <script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://unpkg.com/alpinejs" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -131,23 +132,43 @@ La integración de datos satelitales con herramientas geoespaciales y automatiza
 
       </div>
     </div>
-<!-- Proyecto CO₂ con LiDAR -->
-<div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-center">
-  <!-- Texto -->
-  <div class="col-span-3">
-    <h4 class="text-2xl font-bold text-white mb-2">Estimación de CO₂ equivalente con datos LiDAR</h4>
-    <p class="text-gray-300 text-base mb-4">
-      Este proyecto emplea datos LiDAR del PNOA para estimar la biomasa aérea y la captura de carbono en un entorno forestal. A partir de la estructura vertical del dosel, se calcularon alturas promedio por unidad territorial, aplicando modelos alométricos para estimar biomasa.<br><br>
-      Posteriormente, se calculó el carbono almacenado y se convirtió a CO₂ equivalente mediante un factor estándar (3.67). El resultado se representa en un mapa temático, identificando zonas de mayor absorción de carbono, útil para planificación forestal y estrategias de mitigación del cambio climático.
-    </p>
-  </div>
+ <!-- Proyecto 2: Incendio Las Hurdes -->
+          <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
+            <div class="col-span-3">
+              <h3 class="text-xl font-semibold mb-2">Estimación de CO₂ equivalente tras el incendio de Las Hurdes</h3>
+              <p class="text-zinc-400 mb-4">
+                En mayo de 2023, un incendio afectó la comarca de Las Hurdes (Cáceres), arrasando más de 10.000 hectáreas. Este proyecto evalúa su impacto ecológico mediante imágenes Sentinel-2 y datos LiDAR del PNOA.
+              </p>
+              <div x-show="expanded" x-transition>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                  <div><img src="sentinel_2023-04-11.png" alt="Antes del incendio"><p class="text-center text-sm text-gray-400 mt-2">11/04/2023</p></div>
+                  <div><img src="sentinel_2023-05-19.png" alt="Durante el incendio"><p class="text-center text-sm text-gray-400 mt-2">19/05/2023</p></div>
+                  <div><img src="sentinel_2023-06-25.png" alt="Después del incendio"><p class="text-center text-sm text-gray-400 mt-2">25/06/2023</p></div>
+                </div>
+                <p class="text-zinc-400 text-sm mb-4">
+                  Se calculó el índice NBR y su diferencia entre fechas (dNBR) para clasificar la severidad. Se procesaron datos LiDAR para obtener DTM, DSM y CHM de zonas quemadas y no afectadas.<br><br>
+                  La altura media del dosel en la zona de referencia fue de ~13.6 m, frente a apenas 0.7 m en la zona incendiada. Usando estimaciones de biomasa por m³ y contenido de carbono de <em>Pinus pinaster</em>, se calculó una pérdida potencial de más de 1.000 toneladas de CO₂eq por cada 10 ha afectadas.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                  <div><img src="chm_zona_referencia.png" alt="CHM referencia"><p class="text-center text-sm text-gray-400 mt-2">CHM – Zona no quemada</p></div>
+                  <div><img src="chm_zona_incendio.png" alt="CHM incendio"><p class="text-center text-sm text-gray-400 mt-2">CHM – Zona quemada</p></div>
+                </div>
+                <div class="my-6">
+                  <img src="dNBR_map.png" alt="Mapa dNBR">
+                  <p class="text-center text-sm text-gray-400 mt-2">Mapa de severidad del incendio según dNBR</p>
+                </div>
+              </div>
+              <button @click="expanded = !expanded" class="mt-4 text-green-400 hover:text-green-300 transition font-semibold">
+                <span x-show="!expanded">Mostrar más ↓</span>
+                <span x-show="expanded">Mostrar menos ↑</span>
+              </button>
+              
+            </div>
+            <div class="col-span-1">
+              <img src="co2-lidar-bosque.png" alt="Visualización LiDAR" class="rounded-lg shadow-md w-full h-auto object-cover" />
+            </div>
+          </div>
 
-  <!-- Imagen -->
-  <div class="col-span-1">
-    <img src="co2-lidar-bosque.png" alt="Proyecto CO₂ LiDAR"
-         class="rounded-lg shadow-md w-full h-auto object-cover" />
-  </div>
-</div>
     <!-- Proyecto 2 (placeholder) -->
     <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 text-center text-gray-400 italic">
       Próximamente: análisis multivariable con Python y geopandas
