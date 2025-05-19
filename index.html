@@ -159,44 +159,96 @@
     
 <!-- Proyecto 3: Clasificación automática con Python -->
 <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
+  <!-- Contenido principal -->
   <div class="col-span-3">
     <h3 class="text-xl font-semibold mb-2">
       Clasificación automática del terreno y NDVI con Python
     </h3>
     <p class="text-zinc-400 mb-4">
-      Este proyecto combina técnicas de procesamiento digital de imágenes y teledetección mediante Python puro. A partir de imágenes multibanda de Sentinel-2, se han extraído bandas específicas (rojo, verde, azul e infrarrojo cercano) para realizar dos análisis principales:
+      Este proyecto utiliza Python puro para procesar imágenes satelitales Sentinel-2, generando indicadores ambientales y clasificaciones automáticas del terreno sin necesidad de software SIG tradicional.
     </p>
-    <ul class="list-disc ml-6 mb-4 text-sm text-gray-300">
-      <li><strong>NDVI:</strong> cálculo pixel a pixel del índice de vegetación.</li>
-      <li><strong>K-Means:</strong> clasificación automática RGB no supervisada.</li>
-    </ul>
-    <button @click="expanded = !expanded" class="mt-2 text-green-400 hover:text-green-300 transition font-semibold">
-      <span x-show="!expanded">Mostrar más ↓</span>
-      <span x-show="expanded">Mostrar menos ↑</span>
-    </button>
-    <div x-show="expanded" x-transition class="mt-4 text-zinc-400 text-sm space-y-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+    <!-- Botón toggle -->
+    <div class="mt-2">
+      <button @click="expanded = !expanded" class="text-green-400 hover:text-green-300 transition font-semibold">
+        <span x-show="!expanded">Mostrar más ↓</span>
+        <span x-show="expanded">Mostrar menos ↑</span>
+      </button>
+    </div>
+
+    <!-- Contenido expandible -->
+   <div x-show="expanded" x-transition class="mt-6 text-sm text-gray-300 space-y-6">
+
+      <!-- Qué hace el programa -->
+      <div class="space-y-2">
+        <h4 class="text-green-400 font-semibold">📌 ¿Qué hace el programa?</h4>
+        <ul class="list-disc ml-6 text-sm text-gray-300 space-y-1">
+          <li>Lee imágenes raster multibanda (tiff) de Sentinel-2.</li>
+          <li>Genera una imagen RGB del territorio (visualización natural).</li>
+          <li>Calcula el <strong>NDVI</strong> (índice de vegetación) y lo exporta como imagen y GeoTIFF.</li>
+          <li>Aplica <strong>clasificación no supervisada</strong> (K-Means) sobre los píxeles RGB para agrupar coberturas del terreno.</li>
+          <li>Exporta los resultados como imágenes PNG y archivos GeoTIFF georreferenciados.</li>
+        </ul>
+      </div>
+
+      <!-- Requisitos -->
+      <div class="space-y-2">
+        <h4 class="text-green-400 font-semibold">📂 ¿Qué datos necesitas?</h4>
+        <ul class="list-disc ml-6 text-sm text-gray-300 space-y-1">
+          <li>Cuatro bandas de Sentinel-2 en formato <code>.tiff</code>:
+            <ul class="ml-4 list-disc">
+              <li>B02 – Azul</li>
+              <li>B03 – Verde</li>
+              <li>B04 – Rojo</li>
+              <li>B08 – Infrarrojo cercano (NIR)</li>
+            </ul>
+          </li>
+          <li>Todos los archivos deben estar en una misma carpeta local.</li>
+          <li>Se debe indicar esa ruta en el script (variable <code>folder</code>).</li>
+        </ul>
+      </div>
+
+      <!-- Resultados -->
+      <div class="space-y-2">
+        <h4 class="text-green-400 font-semibold">📤 ¿Qué genera?</h4>
+        <ul class="list-disc ml-6 text-sm text-gray-300 space-y-1">
+          <li><code>rgb_visual.png</code> — Visualización RGB del territorio</li>
+          <li><code>ndvi_visual.png</code> — Mapa de NDVI</li>
+          <li><code>ndvi_leyenda.png</code> — NDVI con barra de color</li>
+          <li><code>clasificacion_kmeans.png</code> — Clasificación de coberturas (K-Means)</li>
+          <li><code>kmeans_leyenda.png</code> — Clasificación con leyenda de clases</li>
+          <li><code>ndvi.tif</code> — NDVI georreferenciado</li>
+          <li><code>clasificacion_kmeans.tif</code> — Clasificación georreferenciada</li>
+        </ul>
+      </div>
+
+      <!-- Imágenes -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
         <div>
-          <img src="IMG_P3/rgb_visual.png" alt="Composición RGB" class="rounded-lg shadow">
-          <p class="text-xs mt-2 text-center">Composición RGB original</p>
+          <img src="IMG_P3/rgb_visual.png" alt="Composición RGB" class="rounded shadow">
+          <p class="text-center mt-2 text-xs text-gray-400">Composición RGB</p>
         </div>
         <div>
-          <img src="IMG_P3/ndvi_visual.png" alt="NDVI" class="rounded-lg shadow">
-          <p class="text-xs mt-2 text-center">Índice de Vegetación NDVI</p>
+          <img src="IMG_P3/ndvi_leyenda.png" alt="NDVI con leyenda" class="rounded shadow">
+          <p class="text-center mt-2 text-xs text-gray-400">NDVI con leyenda</p>
         </div>
         <div>
-          <img src="IMG_P3/clasificacion_kmeans.png" alt="Clasificación KMeans" class="rounded-lg shadow">
-          <p class="text-xs mt-2 text-center">Clasificación K-Means</p>
+          <img src="IMG_P3/kmeans_leyenda.png" alt="K-Means con leyenda" class="rounded shadow">
+          <p class="text-center mt-2 text-xs text-gray-400">Clasificación K-Means con leyenda</p>
         </div>
       </div>
+
     </div>
   </div>
+
+
+  <!-- Imagen lateral -->
   <div class="col-span-1">
-    <img src="IMG_P3/ndvi_visual.png" alt="Vista lateral NDVI" class="rounded-lg shadow-md w-full h-auto object-cover">
+    <img src="IMG_P3/ndvi_visual.png" alt="Vista NDVI lateral" class="rounded-lg shadow-md w-full h-auto object-cover">
   </div>
 </div>
 
-    
+
 <!-- Proyecto 2: Estimación CO2 Las Hurdes -->
     <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
      <div class="col-span-3">
