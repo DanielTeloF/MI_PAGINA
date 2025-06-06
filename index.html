@@ -159,7 +159,6 @@
     
 <!-- Proyecto 3: Clasificación automática con Python -->
 <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
-  <!-- Contenido principal -->
   <div class="col-span-3">
     <h3 class="text-xl font-semibold mb-2">
       Clasificación automática del terreno y NDVI con Python
@@ -168,57 +167,45 @@
       Este proyecto utiliza Python puro para procesar imágenes satelitales Sentinel-2, generando indicadores ambientales y clasificaciones automáticas del terreno sin necesidad de software SIG tradicional.
     </p>
 
-    <!-- Botón toggle -->
     <div class="mt-2">
       <button @click="expanded = !expanded" class="text-green-400 hover:text-green-300 transition font-semibold">
         <span x-show="!expanded">Mostrar más ↓</span>
-        <span x-show="expanded">Mostrar menos ↑</span>
       </button>
     </div>
 
-    <!-- Contenido expandible -->
-   <div x-show="expanded" x-transition class="mt-6 text-sm text-gray-300 space-y-6">
+    <div x-show="expanded" x-transition class="mt-6 text-sm text-gray-300 space-y-6">
 
       <!-- Qué hace el programa -->
       <div class="space-y-2">
         <h4 class="text-green-400 font-semibold">📌 ¿Qué hace el programa?</h4>
-        <ul class="list-disc ml-6 text-sm text-gray-300 space-y-1">
+        <ul class="list-disc ml-6 space-y-1">
           <li>Lee imágenes raster multibanda (tiff) de Sentinel-2.</li>
           <li>Genera una imagen RGB del territorio (visualización natural).</li>
-          <li>Calcula el <strong>NDVI</strong> (índice de vegetación) y lo exporta como imagen y GeoTIFF.</li>
-          <li>Aplica <strong>clasificación no supervisada</strong> (K-Means) sobre los píxeles RGB para agrupar coberturas del terreno.</li>
-          <li>Exporta los resultados como imágenes PNG y archivos GeoTIFF georreferenciados.</li>
+          <li>Calcula el <strong>NDVI</strong> y lo exporta como imagen y GeoTIFF.</li>
+          <li>Clasifica el terreno mediante <strong>K-Means</strong>.</li>
+          <li>Exporta resultados como PNG y GeoTIFF.</li>
         </ul>
       </div>
 
       <!-- Requisitos -->
       <div class="space-y-2">
         <h4 class="text-green-400 font-semibold">📂 ¿Qué datos necesitas?</h4>
-        <ul class="list-disc ml-6 text-sm text-gray-300 space-y-1">
-          <li>Cuatro bandas de Sentinel-2 en formato <code>.tiff</code>:
-            <ul class="ml-4 list-disc">
-              <li>B02 – Azul</li>
-              <li>B03 – Verde</li>
-              <li>B04 – Rojo</li>
-              <li>B08 – Infrarrojo cercano (NIR)</li>
-            </ul>
-          </li>
-          <li>Todos los archivos deben estar en una misma carpeta local.</li>
-          <li>Se debe indicar esa ruta en el script (variable <code>folder</code>).</li>
+        <ul class="list-disc ml-6 space-y-1">
+          <li>Bandas B02, B03, B04, B08 en formato <code>.tiff</code> en una carpeta local.</li>
         </ul>
       </div>
 
       <!-- Resultados -->
       <div class="space-y-2">
         <h4 class="text-green-400 font-semibold">📤 ¿Qué genera?</h4>
-        <ul class="list-disc ml-6 text-sm text-gray-300 space-y-1">
-          <li><code>rgb_visual.png</code> — Visualización RGB del territorio</li>
-          <li><code>ndvi_visual.png</code> — Mapa de NDVI</li>
-          <li><code>ndvi_leyenda.png</code> — NDVI con barra de color</li>
-          <li><code>clasificacion_kmeans.png</code> — Clasificación de coberturas (K-Means)</li>
-          <li><code>kmeans_leyenda.png</code> — Clasificación con leyenda de clases</li>
-          <li><code>ndvi.tif</code> — NDVI georreferenciado</li>
-          <li><code>clasificacion_kmeans.tif</code> — Clasificación georreferenciada</li>
+        <ul class="list-disc ml-6 space-y-1">
+          <li><code>rgb_visual.png</code></li>
+          <li><code>ndvi_visual.png</code></li>
+          <li><code>ndvi_leyenda.png</code></li>
+          <li><code>clasificacion_kmeans.png</code></li>
+          <li><code>kmeans_leyenda.png</code></li>
+          <li><code>ndvi.tif</code></li>
+          <li><code>clasificacion_kmeans.tif</code></li>
         </ul>
       </div>
 
@@ -238,9 +225,19 @@
         </div>
       </div>
 
+      <!-- Botón de descarga -->
+      <a href="ClasificacióbAutomatica.py" download class="inline-block text-white bg-green-600 hover:bg-green-700 px-4 py-2 mt-4 rounded-md transition">
+        Descargar código (.py)
+      </a>
+
+      <!-- Botón mostrar menos -->
+      <div class="mt-4">
+        <button @click="expanded = false" class="text-green-400 hover:text-green-300 transition font-semibold">
+          Mostrar menos ↑
+        </button>
+      </div>
     </div>
   </div>
-
 
   <!-- Imagen lateral -->
   <div class="col-span-1">
@@ -248,6 +245,25 @@
   </div>
 </div>
 
+<!-- Proyecto 4: Visor CCAA Interactivo -->
+<div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start">
+  <div class="col-span-3">
+    <h4 class="text-2xl font-bold text-white mb-2">Visor interactivo por CCAA</h4>
+    <p class="text-gray-300 text-base mb-4">
+      Aplicación web interactiva que permite visualizar indicadores agroambientales, sociales y energéticos en el territorio español a escala de comunidades autónomas. 
+      <br><br>
+      El visor incluye leyenda vertical, escala de colores dinámica, descripción del indicador, unidades personalizadas y opción de descarga del mapa generado. Se han incluido funciones para mostrar los valores al pasar el ratón y destacar el indicador en la cabecera. 
+      <br><br>
+      Una herramienta ideal para comunicar de forma visual e intuitiva datos espaciales complejos en el contexto territorial de España.
+    </p>
+    <a class="inline-block text-white bg-green-600 hover:bg-green-700 px-5 py-2 rounded-md transition" href="https://danieltelof.github.io/visor-ccaa/" target="_blank">
+      Ver visor interactivo
+    </a>
+  </div>
+  <div class="col-span-1">
+    <img alt="Visor CCAA interactivo" class="rounded-lg shadow-md w-full h-auto object-cover" src="visor-ccaa-preview.png"/>
+  </div>
+</div>
 
 <!-- Proyecto 2: Estimación CO2 Las Hurdes -->
     <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
