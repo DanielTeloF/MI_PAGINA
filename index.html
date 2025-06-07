@@ -61,6 +61,7 @@
    <div class="max-w-6xl mx-auto">
     <h3 class="text-3xl font-semibold mb-10 text-center text-green-400">
      Sobre mí
+
     </h3>
     <div class="grid gap-10">
      <!-- Bloque 1 -->
@@ -139,13 +140,19 @@
   <div class="col-span-3">
     <h4 class="text-2xl font-bold text-white mb-2">NDVI de Baena (Córdoba)</h4>
     <p class="text-gray-300 text-base mb-4">
-      Este proyecto analiza el índice de vegetación NDVI a partir de imágenes satelitales Sentinel-2 en la zona agrícola de Baena (Córdoba).
+      Este proyecto analiza la evolución del índice de vegetación NDVI en explotaciones agrícolas de Baena (Córdoba) a partir de imágenes satelitales Sentinel-2. El objetivo fue crear una visualización interactiva que permita evaluar la actividad vegetal de cada parcela a lo largo del tiempo, facilitando la detección de anomalías o comportamientos atípicos.
       <br><br>
-      Se trabajó con aproximadamente 1.000 recintos seleccionados a partir de los polígonos catastrales del 1 al 8, excluyendo aquellos cuya superficie era inferior a 1.000 m² para centrarse en unidades agrícolas relevantes.
+      Se utilizaron datos abiertos del <strong>SIGPAC de la Junta de Andalucía</strong>, filtrando más de 1.000 recintos agrícolas de los polígonos catastrales 1 al 8. Se excluyeron aquellas parcelas menores a 1.000 m² para centrarse en unidades productivas significativas. A partir de estas geometrías se generaron archivos <code>GeoJSON</code> que sirvieron como base para la visualización.
       <br><br>
-      Las bandas espectrales B04 (rojo) y B08 (infrarrojo cercano) fueron procesadas mediante la fórmula estándar del NDVI. El resultado fue el cálculo del valor medio de NDVI por parcela para varias fechas a lo largo de la campaña. Estos valores se integraron como atributos dentro del SIGPAC para cada recinto, permitiendo un análisis espacial coherente. Además, se automatizó con Python la generación de gráficos temporales de NDVI por parcela. La visualización final se integra en una aplicación web interactiva mediante Leaflet.
-      <br><br>
-      La integración de datos satelitales con herramientas geoespaciales y automatización en Python demuestra el potencial del análisis espacial aplicado al territorio.
+      Las bandas B04 (rojo) y B08 (infrarrojo cercano) de Sentinel-2 se procesaron para calcular el NDVI en cinco fechas distintas. Estos valores se integraron como atributos espaciales en cada recinto y se visualizaron como capas raster mediante <strong>Leaflet.js</strong>. Además, se automatizó con <strong>Python</strong> la generación de gráficos NDVI temporales para cada parcela, y se programó un visor que permite:
+      <ul class="list-disc list-inside mt-2 text-sm text-gray-400">
+        <li>Filtrar por tipo de cultivo (olivar, frutales, etc.).</li>
+        <li>Buscar por ID de recinto.</li>
+        <li>Visualizar estadísticas: media, desviación típica, tendencia y valores extremos.</li>
+        <li>Detectar automáticamente anomalías estacionales.</li>
+      </ul>
+      <br>
+      El resultado es una herramienta web interactiva que integra procesamiento de imágenes, análisis geoespacial y visualización dinámica del territorio, demostrando el potencial del código abierto para el monitoreo agrícola.
     </p>
     <a class="inline-block text-white bg-green-600 hover:bg-green-700 px-5 py-2 rounded-md transition" href="https://danieltelof.github.io/portfolio/" target="_blank">
       Ver visor interactivo
@@ -155,16 +162,19 @@
     <img alt="Visual NDVI Baena" class="rounded-lg shadow-md w-full h-auto object-cover" src="ndvi-baena-proyecto.png"/>
   </div>
 </div>
-
     
-<!-- Proyecto 3: Clasificación automática con Python -->
+<!-- Proyecto 2: Clasificación automática con Python -->
 <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
   <div class="col-span-3">
     <h3 class="text-xl font-semibold mb-2">
       Clasificación automática del terreno y NDVI con Python
     </h3>
     <p class="text-zinc-400 mb-4">
-      Este proyecto utiliza Python puro para procesar imágenes satelitales Sentinel-2, generando indicadores ambientales y clasificaciones automáticas del terreno sin necesidad de software SIG tradicional.
+      ¿Es posible analizar imágenes satelitales y clasificar el terreno usando solo código? En este proyecto demuestro que sí: con Python puro, procesé imágenes multiespectrales de Sentinel-2 para generar indicadores ambientales y mapas temáticos sin depender de software SIG tradicional.
+      <br><br>
+      El objetivo era construir una herramienta ligera, replicable y accesible para automatizar el análisis de vegetación (NDVI) y la segmentación del paisaje mediante algoritmos no supervisados.
+      <br><br>
+      El resultado es un flujo de trabajo autónomo que convierte datos en información útil para la toma de decisiones ambientales, combinando ciencia de datos con teledetección de código abierto.
     </p>
 
     <div class="mt-2">
@@ -177,27 +187,28 @@
 
       <!-- Qué hace el programa -->
       <div class="space-y-2">
-        <h4 class="text-green-400 font-semibold">📌 ¿Qué hace el programa?</h4>
+        <h4 class="text-green-400 font-semibold">🧠 ¿Qué hace el script?</h4>
         <ul class="list-disc ml-6 space-y-1">
-          <li>Lee imágenes raster multibanda (tiff) de Sentinel-2.</li>
-          <li>Genera una imagen RGB del territorio (visualización natural).</li>
-          <li>Calcula el <strong>NDVI</strong> y lo exporta como imagen y GeoTIFF.</li>
-          <li>Clasifica el terreno mediante <strong>K-Means</strong>.</li>
-          <li>Exporta resultados como PNG y GeoTIFF.</li>
+          <li>Lee imágenes multibanda (.tiff) de Sentinel-2 desde una carpeta local.</li>
+          <li>Genera una imagen RGB del territorio en colores naturales.</li>
+          <li>Calcula el índice NDVI y lo exporta como PNG y GeoTIFF.</li>
+          <li>Clasifica automáticamente el terreno mediante <strong>K-Means</strong>.</li>
+          <li>Exporta los resultados como imágenes visuales y archivos georreferenciados.</li>
         </ul>
       </div>
 
       <!-- Requisitos -->
       <div class="space-y-2">
-        <h4 class="text-green-400 font-semibold">📂 ¿Qué datos necesitas?</h4>
+        <h4 class="text-green-400 font-semibold">📂 Datos de entrada</h4>
         <ul class="list-disc ml-6 space-y-1">
-          <li>Bandas B02, B03, B04, B08 en formato <code>.tiff</code> en una carpeta local.</li>
+          <li>Bandas B02, B03, B04 y B08 en formato <code>.tiff</code>.</li>
+          <li>Imágenes descargadas de SentinelHub o Copernicus Browser.</li>
         </ul>
       </div>
 
       <!-- Resultados -->
       <div class="space-y-2">
-        <h4 class="text-green-400 font-semibold">📤 ¿Qué genera?</h4>
+        <h4 class="text-green-400 font-semibold">📤 Salidas generadas</h4>
         <ul class="list-disc ml-6 space-y-1">
           <li><code>rgb_visual.png</code></li>
           <li><code>ndvi_visual.png</code></li>
@@ -245,16 +256,27 @@
   </div>
 </div>
 
-<!-- Proyecto 4: Visor CCAA Interactivo -->
+<!-- Proyecto 3: Visor CCAA Interactivo -->
 <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start">
   <div class="col-span-3">
     <h4 class="text-2xl font-bold text-white mb-2">Visor interactivo por CCAA</h4>
     <p class="text-gray-300 text-base mb-4">
-      Aplicación web interactiva que permite visualizar indicadores agroambientales, sociales y energéticos en el territorio español a escala de comunidades autónomas. 
+      Este visor permite representar visualmente una serie de indicadores territoriales en España a nivel de comunidades autónomas. El objetivo fue desarrollar una interfaz simple e interactiva que permita experimentar con mapas temáticos y escalas de color basadas en datos cargados manualmente.
       <br><br>
-      El visor incluye leyenda vertical, escala de colores dinámica, descripción del indicador, unidades personalizadas y opción de descarga del mapa generado. Se han incluido funciones para mostrar los valores al pasar el ratón y destacar el indicador en la cabecera. 
+      El sistema se ha creado con <strong>Leaflet.js</strong> para la visualización geoespacial, <strong>TailwindCSS</strong> para el diseño de la interfaz y <strong>html2canvas</strong> para exportar el mapa como imagen. Los valores se almacenan directamente en un archivo <code>GeoJSON</code> y están organizados en categorías temáticas como agricultura, energía o aspectos sociales.
       <br><br>
-      Una herramienta ideal para comunicar de forma visual e intuitiva datos espaciales complejos en el contexto territorial de España.
+      Entre sus funcionalidades se incluyen:
+      <ul class="list-disc list-inside mt-2 text-sm text-gray-400">
+        <li>Selección de categoría e indicador desde un panel lateral.</li>
+        <li>Tooltip dinámico al pasar el ratón con el valor correspondiente.</li>
+        <li>Escala de color adaptativa con leyenda vertical.</li>
+        <li>Cabecera sincronizada con el indicador activo.</li>
+        <li>Botón para descargar el mapa generado como imagen PNG.</li>
+      </ul>
+      <br>
+      <span class="text-sm text-gray-400 italic">
+        Nota: Los datos utilizados no provienen de fuentes oficiales y fueron generados y/o aproximados exclusivamente con fines de prueba y aprendizaje. Este visor no debe interpretarse como una herramienta de análisis técnico ni emplearse con fines profesionales o divulgativos.
+      </span>
     </p>
     <a class="inline-block text-white bg-green-600 hover:bg-green-700 px-5 py-2 rounded-md transition" href="https://danieltelof.github.io/visor-ccaa/" target="_blank">
       Ver visor interactivo
@@ -265,276 +287,114 @@
   </div>
 </div>
 
-<!-- Proyecto 2: Estimación CO2 Las Hurdes -->
-    <div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
-     <div class="col-span-3">
-      <h3 class="text-xl font-semibold mb-2">
-       Estimación de CO₂ equivalente tras el incendio de Las Hurdes
-      </h3>
-      <p class="text-zinc-400 mb-4">
-       Este proyecto evalúa el impacto del incendio forestal ocurrido en mayo de 2023 en la comarca de Las Hurdes (Cáceres), mediante el análisis de imágenes Sentinel-2 y datos LiDAR del PNOA. A través del cálculo de índices espectrales y modelos digitales de altura, se delimitó el área afectada y se estimó la pérdida de vegetación.
-       <br/>
-       <br/>
-       El objetivo principal fue estimar la cantidad de CO₂ equivalente que podría capturarse si se reforestara toda la superficie quemada, teniendo en cuenta la estructura forestal previa y aplicando criterios técnicos de biomasa aérea.
+<!-- Proyecto 4: Estimación CO₂ Las Hurdes -->
+<div class="w-full bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mb-12 grid md:grid-cols-4 gap-6 items-start" x-data="{ expanded: false }">
+  <div class="col-span-3">
+    <h3 class="text-xl font-semibold mb-2">
+      Estimación de CO₂ equivalente tras el incendio de Las Hurdes
+    </h3>
+    <p class="text-zinc-400 mb-4">
+      Este proyecto evalúa el impacto del incendio forestal ocurrido en mayo de 2023 en la comarca de Las Hurdes (Cáceres), a partir del análisis de imágenes Sentinel-2 y datos LiDAR del PNOA. Se delimita el área afectada mediante índices espectrales multitemporales y se compara la estructura vertical de la vegetación antes y después del incendio.
+      <br/><br/>
+      El objetivo es realizar una estimación aproximada del CO₂ equivalente que podría capturarse en caso de reforestar la superficie afectada, utilizando modelos simplificados y supuestos técnicos estándar sobre biomasa aérea.
+    </p>
+
+    <div x-show="expanded" x-transition>
+      <!-- Comparativa multitemporal Sentinel-2 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+        <div>
+          <img alt="Antes del incendio" src="sentinel_2023-04-11.png" class="rounded shadow"/>
+          <p class="text-center text-sm text-gray-400 mt-2">Antes del incendio (11/04/2023)</p>
+        </div>
+        <div>
+          <img alt="Durante el incendio" src="sentinel_2023-05-19.png" class="rounded shadow"/>
+          <p class="text-center text-sm text-gray-400 mt-2">Durante el incendio (19/05/2023)</p>
+        </div>
+        <div>
+          <img alt="Después del incendio" src="sentinel_2023-06-25.png" class="rounded shadow"/>
+          <p class="text-center text-sm text-gray-400 mt-2">Después del incendio (25/06/2023)</p>
+        </div>
+      </div>
+
+      <!-- Índice dNBR y severidad -->
+      <p class="text-zinc-400 text-sm mb-6">
+        Las imágenes fueron usadas para calcular el índice <strong>dNBR</strong> (Normalized Burn Ratio Difference), útil para identificar zonas afectadas por incendios según el cambio espectral. A partir de este índice se generó un mapa de severidad:
       </p>
-      <div x-show="expanded" x-transition="">
-       <!-- Imágenes Sentinel -->
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-        <div>
-         <img alt="Antes del incendio" src="sentinel_2023-04-11.png"/>
-         <p class="text-center text-sm text-gray-400 mt-2">
-          Antes del incendio (11/04/2023)
-         </p>
-        </div>
-        <div>
-         <img alt="Durante el incendio" src="sentinel_2023-05-19.png"/>
-         <p class="text-center text-sm text-gray-400 mt-2">
-          Durante el incendio (19/05/2023)
-         </p>
-        </div>
-        <div>
-         <img alt="Después del incendio" src="sentinel_2023-06-25.png"/>
-         <p class="text-center text-sm text-gray-400 mt-2">
-          Después del incendio (25/06/2023)
-         </p>
-        </div>
-       </div>
-       <!-- dNBR y leyenda -->
-       <p class="text-zinc-400 text-sm mb-6">
-        Las imágenes multitemporales de Sentinel-2 permitieron calcular el índice dNBR (Normalized Burn Ratio Difference), que identifica las zonas afectadas por el fuego a partir de variaciones espectrales. Esta metodología permitió cuantificar la severidad del incendio y estimar la superficie quemada.
-       </p>
-       <div class="flex flex-col md:flex-row items-start gap-6 my-8">
+      <div class="flex flex-col md:flex-row items-start gap-6 my-8">
         <div class="flex-1">
-         <img alt="Mapa dNBR Las Hurdes" class="w-full max-w-full rounded shadow-md" src="dnbr_lashurdes.png"/>
-         <p class="text-center text-sm text-gray-400 mt-2">
-          Mapa de severidad del incendio (dNBR)
-         </p>
+          <img alt="Mapa dNBR Las Hurdes" class="w-full max-w-full rounded shadow-md" src="dnbr_lashurdes.png"/>
+          <p class="text-center text-sm text-gray-400 mt-2">Mapa de severidad del incendio (dNBR)</p>
         </div>
         <div class="w-full md:w-auto flex justify-center">
-         <img alt="Leyenda dNBR" class="w-48 md:w-52 rounded" src="dnbr_leyenda.png"/>
+          <img alt="Leyenda dNBR" class="w-48 md:w-52 rounded" src="dnbr_leyenda.png"/>
         </div>
-       </div>
-       <p class="text-zinc-400 text-sm mb-6">
-        Según la clasificación de severidad, se estimó que el incendio afectó una superficie aproximada de
-        <strong>
-         10.700 hectáreas
-        </strong>
-        .
-       </p>
-       <!-- LiDAR comparativo -->
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start my-10">
+      </div>
+
+      <p class="text-zinc-400 text-sm mb-6">
+        Según esta clasificación, se estima que la superficie afectada alcanza aproximadamente <strong>10.700 hectáreas</strong>.
+      </p>
+
+      <!-- Comparativa LiDAR -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start my-10">
         <div class="flex flex-col items-center">
-         <img alt="LiDAR zona quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="lidar_zona_incendio.png"/>
-         <p class="text-center text-sm text-gray-400 mt-2">
-          Datos LiDAR – Zona quemada
-         </p>
+          <img alt="LiDAR zona quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="lidar_zona_incendio.png"/>
+          <p class="text-center text-sm text-gray-400 mt-2">Datos LiDAR – Zona quemada</p>
         </div>
         <div class="flex flex-col items-center">
-         <img alt="LiDAR zona no quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="lidar_zona_referencia.png"/>
-         <p class="text-center text-sm text-gray-400 mt-2">
-          Datos LiDAR – Zona no quemada
-         </p>
+          <img alt="LiDAR zona no quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="lidar_zona_referencia.png"/>
+          <p class="text-center text-sm text-gray-400 mt-2">Datos LiDAR – Zona no quemada</p>
         </div>
-       </div>
-       <div class="text-sm text-zinc-400 leading-relaxed max-w-4xl mx-auto">
-        <p>
-         Los datos LiDAR del PNOA se utilizaron para comparar la estructura vertical entre una zona afectada por el fuego y otra de referencia. En la primera, los puntos aparecen más planos y uniformes, reflejando la pérdida total del dosel. En la segunda, se observa una distribución irregular propia de bosques maduros con cobertura frondosa.
-        </p>
-       </div>
-       <!-- CHM + análisis -->
-       <p class="text-zinc-400 text-sm mt-10 mb-4">
-        A partir del MDT (clase 2 - ground) y del MDS (máximo por celda), se generó el CHM (Canopy Height Model), que representa la altura de la vegetación. A continuación se comparan ambos modelos:
-       </p>
-       <!-- CHM imágenes y leyendas -->
-       <div class="my-10 flex flex-col gap-6">
-        <p class="text-sm text-zinc-400 leading-relaxed text-center">
-         Comparativa entre la altura media del dosel en la zona quemada y no quemada.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start justify-center">
-         <div class="md:col-span-2 flex flex-col items-center">
-          <img alt="CHM zona quemada" class="w-full max-w-[420px] rounded shadow-md" src="chr_incendio.png"/>
-          <p class="text-center text-sm text-gray-400 mt-2">
-           CHM – Zona quemada
-          </p>
-         </div>
-         <div class="flex justify-start items-start">
-          <img alt="Leyenda CHM zona quemada" class="w-20 md:w-20 rounded" src="chr_leyenda_incendio.png"/>
-         </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start justify-center mt-10">
-         <div class="md:col-span-2 flex flex-col items-center">
-          <img alt="CHM zona no quemada" class="w-full max-w-[420px] rounded shadow-md" src="chr_referencia.png"/>
-          <p class="text-center text-sm text-gray-400 mt-2">
-           CHM – Zona no quemada
-          </p>
-         </div>
-         <div class="flex justify-start items-start">
-          <img alt="Leyenda CHM zona no quemada" class="w-20 md:w-20 rounded" src="chr_leyenda_referencia.png"/>
-         </div>
-        </div>
-       </div>
-       <!-- Resultados y estimaciones -->
-       <div class="bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mt-12">
-        <h4 class="text-xl font-semibold text-green-400 mb-4">
-         Estimación de CO₂ equivalente capturable
-        </h4>
+      </div>
+
+      <!-- Análisis estructural -->
+      <div class="text-sm text-zinc-400 leading-relaxed max-w-4xl mx-auto">
+        <p>Los datos LiDAR se emplearon para generar el <strong>CHM (Canopy Height Model)</strong>, comparando la altura media del dosel entre zonas afectadas y no afectadas. Se observa una pérdida notable de biomasa aérea en la zona incendiada.</p>
+      </div>
+
+      <!-- Estimación de captura de CO₂ -->
+      <div class="bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg p-8 mt-12">
+        <h4 class="text-xl font-semibold text-green-400 mb-4">Estimación de CO₂ equivalente capturable</h4>
         <p class="text-sm text-gray-300 mb-6">
-         En la zona de referencia se registró una altura media de vegetación de
-         <strong>
-          5,21 m
-         </strong>
-         , frente a
-         <strong>
-          1,77 m
-         </strong>
-         en la zona incendiada. La similitud en la desviación estándar (3,5 m) indica que la estructura vertical original fue sustancialmente degradada.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
-         <div class="bg-zinc-900 p-4 rounded shadow">
-          <p>
-           <strong>
-            Zona no quemada:
-           </strong>
-          </p>
-          <ul class="list-disc list-inside">
-           <li>
-            Altura media:
-            <strong>
-             5,21 m
-            </strong>
-           </li>
-           <li>
-            Desviación estándar: 3,5 m
-           </li>
-          </ul>
-         </div>
-         <div class="bg-zinc-900 p-4 rounded shadow">
-          <p>
-           <strong>
-            Zona quemada:
-           </strong>
-          </p>
-          <ul class="list-disc list-inside">
-           <li>
-            Altura media:
-            <strong>
-             1,77 m
-            </strong>
-           </li>
-           <li>
-            Desviación estándar: 3,5 m
-           </li>
-          </ul>
-         </div>
-        </div>
-        <hr class="my-6 border-zinc-700"/>
-        <h5 class="text-green-400 font-semibold mb-2">
-         Modelo de cálculo
-        </h5>
-        <p class="text-sm text-gray-300 mb-4">
-         Se asumió un marco de plantación de 3x3 m (≈1.100 árboles/ha) y una biomasa aérea por árbol de 63 kg (_Pinus pinaster_, según IFN). Se aplicaron factores estándar para estimar el contenido de carbono y su equivalencia en CO₂.
+          Suponiendo una reforestación completa con <em>Pinus pinaster</em> a razón de 1.100 árboles por hectárea (marco de plantación de 3×3 m), y una biomasa aérea de 63 kg por árbol, se estima una captura teórica de:
         </p>
         <div class="bg-zinc-900 p-4 rounded text-sm text-gray-300">
-         <p>
-          <strong>
-           Por hectárea:
-          </strong>
-         </p>
-         <p>
-          1.100 árboles × 63 kg =
-          <strong>
-           69.300 kg de biomasa
-          </strong>
-         </p>
-         <p>
-          → Carbono: 69.300 × 0,5 =
-          <strong>
-           34.650 kg C
-          </strong>
-         </p>
-         <p>
-          → CO₂eq: 34.650 × 3,67 =
-          <strong>
-           127,27 t CO₂eq/ha
-          </strong>
-         </p>
+          <ul class="list-disc list-inside">
+            <li>1.100 árboles × 63 kg = <strong>69.300 kg</strong> de biomasa por hectárea</li>
+            <li>Contenido de carbono: 69.300 × 0,5 = <strong>34.650 kg C</strong></li>
+            <li>Conversión a CO₂eq: 34.650 × 3,67 = <strong>127,17 t CO₂eq/ha</strong></li>
+          </ul>
         </div>
         <p class="text-sm text-gray-300 mt-6">
-         <strong>
-          Escalado a toda la superficie quemada (10.700 ha):
-         </strong>
+          Escalado a <strong>10.700 hectáreas</strong> → <strong class="text-green-400">≈1.360.670 toneladas de CO₂eq</strong>
         </p>
-        <div class="bg-zinc-900 p-4 rounded text-sm text-gray-300">
-         <p>
-          127,27 × 10.700 =
-          <strong class="text-green-400">
-           1.361.789 toneladas de CO₂eq
-          </strong>
-         </p>
-        </div>
         <p class="text-sm text-gray-400 mt-6 italic">
-         Nota: Se trata de una estimación aproximada basada en modelos simplificados. La biomasa real puede variar según la edad del bosque, el manejo forestal, densidad efectiva de arbolado y regeneración post-incendio.
+          Nota: Esta estimación representa un <strong>escenario hipotético máximo</strong>, sin considerar regeneración natural, limitaciones ecológicas, variabilidad de especies ni factores de degradación del suelo. Su uso es exclusivamente demostrativo.
         </p>
-       </div>
-       <!-- Citas -->
-       <div class="text-sm text-gray-400 mt-12 max-w-4xl mx-auto border-t border-zinc-700 pt-6">
-        <h5 class="text-green-400 font-semibold mb-2">
-         Fuentes y herramientas utilizadas
-        </h5>
-        <ul class="list-disc list-inside">
-         <li>
-          <strong>
-           Sentinel Hub / Copernicus Browser:
-          </strong>
-          imágenes satelitales
-         </li>
-         <li>
-          <strong>
-           ArcGIS Pro:
-          </strong>
-          análisis SIG, NDVI, NBR, CHM
-         </li>
-         <li>
-          <strong>
-           PNOA - CNIG:
-          </strong>
-          datos LiDAR oficiales
-         </li>
-         <li>
-          <strong>
-           MITECO / IFN:
-          </strong>
-          factores de biomasa forestal y carbono
-         </li>
-         <li>
-          <strong>
-           HTML, TailwindCSS y Alpine.js:
-          </strong>
-          desarrollo web
-         </li>
-        </ul>
-       </div>
       </div>
-      <button @click="expanded = !expanded" class="mt-4 text-green-400 hover:text-green-300 transition font-semibold">
-       <span x-show="!expanded">
-        Mostrar más ↓
-       </span>
-       <span x-show="expanded">
-        Mostrar menos ↑
-       </span>
-      </button>
-     </div>
-     <div class="col-span-1">
-      <img alt="Visualización LiDAR" class="rounded-lg shadow-md w-full h-auto object-cover" src="co2-lidar-bosque.png">
-      </img>
-     </div>
-    </div>
-    <button @click="expanded = !expanded" class="mt-4 text-green-400 hover:text-green-300 transition font-semibold">
-    </button>
-   </div>
-   <div class="col-span-1">
-   </div>
 
+      <!-- Herramientas utilizadas -->
+      <div class="text-sm text-gray-400 mt-12 max-w-4xl mx-auto border-t border-zinc-700 pt-6">
+        <h5 class="text-green-400 font-semibold mb-2">Fuentes y herramientas utilizadas</h5>
+        <ul class="list-disc list-inside">
+          <li><strong>Sentinel Hub / Copernicus Browser:</strong> imágenes satelitales</li>
+          <li><strong>ArcGIS Pro:</strong> procesamiento SIG, NDVI, NBR, CHM</li>
+          <li><strong>PNOA – CNIG:</strong> datos LiDAR oficiales</li>
+          <li><strong>MITECO / IFN:</strong> factores de biomasa y carbono</li>
+          <li><strong>HTML, TailwindCSS, Alpine.js:</strong> desarrollo web</li>
+        </ul>
+      </div>
+    </div>
+
+    <button @click="expanded = !expanded" class="mt-4 text-green-400 hover:text-green-300 transition font-semibold">
+      <span x-show="!expanded">Mostrar más ↓</span>
+      <span x-show="expanded">Mostrar menos ↑</span>
+    </button>
+  </div>
+
+  <div class="col-span-1">
+    <img alt="Visualización LiDAR" class="rounded-lg shadow-md w-full h-auto object-cover" src="co2-lidar-bosque.png" />
+  </div>
+</div>
   </div>
 </section>
 <!-- Contacto -->
