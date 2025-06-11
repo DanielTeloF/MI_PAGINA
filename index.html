@@ -44,7 +44,25 @@
    </div>
   </header>
   <!-- Hero Section -->
-  <section class="h-screen bg-cover bg-center relative flex items-center justify-center text-white" id="inicio" style="background-image: url('hero-banner.png'); background-size: cover; background-position: center;">
+  <section 
+  id="inicio"
+  x-data="{
+    images: ['hero-banner.png', 'hero-banner-alt.png'],
+    activeIndex: 0,
+    get currentImage() {
+      return `url('${this.images[this.activeIndex]}')`;
+    },
+    cycle() {
+      setInterval(() => {
+        this.activeIndex = (this.activeIndex + 1) % this.images.length;
+      }, 6000); // cada 6 segundos
+    }
+  }"
+  x-init="cycle"
+  :style="`background-image: ${currentImage}; transition: background-image 1s ease-in-out;`"
+  class="h-screen bg-cover bg-center relative flex items-center justify-center text-white transition-all duration-1000"
+>
+
    <div class="absolute inset-0 bg-black opacity-60">
    </div>
    <div class="relative z-10 text-center px-6">
