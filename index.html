@@ -47,7 +47,7 @@
   <section 
   id="inicio"
   x-data="{
-    images: ['hero-banner.png', 'hero-banner-alt.png'],
+    images: ['IMG/hero-banner.png', 'IMG/hero-banner-alt.png'],
     activeIndex: 0,
     get currentImage() {
       return `url('${this.images[this.activeIndex]}')`;
@@ -92,11 +92,11 @@
         Formación y especial interés en Sistemas de Información Geográfica, medio ambiente, tecnologías aplicadas al territorio, industria, fitotecnia, recursos hídricos y su gestión...
        </p>
       </div>
-      <img alt="Bombilla con planta en entorno degradado" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="ingenieria-agroambiental.png"/>
+      <img alt="Bombilla con planta en entorno degradado" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="IMG/ingenieria-agroambiental.png"/>
      </div>
      <!-- Bloque 2 -->
      <div class="grid md:grid-cols-2 gap-6 items-center">
-      <img alt="Análisis SIG, cartografía y teledetección" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover mr-auto" src="sig-cartografia.png"/>
+      <img alt="Análisis SIG, cartografía y teledetección" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover mr-auto" src="IMG/sig-cartografia.png"/>
       <div>
        <h4 class="text-green-400 font-semibold text-xl mb-2">
         SIG y análisis espacial
@@ -116,11 +116,11 @@
         Formación en gestión agroambiental, uso eficiente de recursos y prácticas que favorecen la salud del ecosistema agrícola. Interés personal en la edafología y en el papel del suelo como eje fundamental para la sostenibilidad, la productividad y el equilibrio ambiental. Compromiso con un enfoque equilibrado entre producción, conservación del entorno y sostenibilidad a largo plazo.
        </p>
       </div>
-      <img alt="Placas solares y cabras pastando - desarrollo sostenible" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="desarrollo-sostenible.png"/>
+      <img alt="Placas solares y cabras pastando - desarrollo sostenible" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="IMG/desarrollo-sostenible.png"/>
      </div>
      <!-- Bloque 4 -->
      <div class="grid md:grid-cols-2 gap-6 items-center">
-      <img alt="Código Python y SQL en pantalla" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover mr-auto" src="python-sql.png"/>
+      <img alt="Código Python y SQL en pantalla" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover mr-auto" src="IMG/python-sql.png"/>
       <div>
        <h4 class="text-green-400 font-semibold text-xl mb-2">
         Tecnología y programación
@@ -140,14 +140,16 @@
         Perfil analítico y proactivo, con orientación a resultados y enfoque práctico. Como ingeniero en formación, me interesa entender los problemas a fondo, plantear soluciones viables y mejorar procesos con los recursos disponibles. Busco aplicar la ingeniería de forma útil y realista, siempre con intención de aportar valor en el entorno técnico y ambiental.
        </p>
       </div>
-      <img alt="Espacio de trabajo con terminales y análisis de datos" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="resolucion-problemas.png"/>
+      <img alt="Espacio de trabajo con terminales y análisis de datos" class="w-[100%] max-w-none h-auto rounded-lg shadow-lg object-cover ml-auto" src="IMG/resolucion-problemas.png"/>
      </div>
     </div>
    </div>
   </section>
   
 <!-- Proyectos destacados -->
-<section class="py-24 px-6 bg-zinc-950" id="proyectos">
+<section class="relative py-24 px-6 bg-zinc-950 overflow-hidden" id="proyectos">
+  <div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center" style="background-image: url('IMG/fondo-difuminado.png');"></div>
+  <div class="relative z-10">
   <div class="max-w-6xl mx-auto">
     <h3 class="text-3xl font-semibold mb-16 text-green-400 text-center">
       Proyectos destacados
@@ -177,7 +179,7 @@
     </a>
   </div>
   <div class="col-span-1">
-    <img alt="Visual NDVI Baena" class="rounded-lg shadow-md w-full h-auto object-cover" src="ndvi-baena-proyecto.png"/>
+    <img alt="Visual NDVI Baena" class="rounded-lg shadow-md w-full h-auto object-cover" src="IMG/ndvi-baena-proyecto.png"/>
   </div>
 </div>
     
@@ -228,11 +230,11 @@
       <div class="space-y-2">
         <h4 class="text-green-400 font-semibold">📤 Salidas generadas</h4>
         <ul class="list-disc ml-6 space-y-1">
-          <li><code>rgb_visual.png</code></li>
-          <li><code>ndvi_visual.png</code></li>
-          <li><code>ndvi_leyenda.png</code></li>
-          <li><code>clasificacion_kmeans.png</code></li>
-          <li><code>kmeans_leyenda.png</code></li>
+          <li><code>IMG/rgb_visual.png</code></li>
+          <li><code>IMG/ndvi_visual.png</code></li>
+          <li><code>IMG/ndvi_leyenda.png</code></li>
+          <li><code>IMG/clasificacion_kmeans.png</code></li>
+          <li><code>IMG/kmeans_leyenda.png</code></li>
           <li><code>ndvi.tif</code></li>
           <li><code>clasificacion_kmeans.tif</code></li>
         </ul>
@@ -301,7 +303,7 @@
     </a>
   </div>
   <div class="col-span-1">
-    <img alt="Visor CCAA interactivo" class="rounded-lg shadow-md w-full h-auto object-cover" src="visor-ccaa-preview.png"/>
+    <img alt="Visor CCAA interactivo" class="rounded-lg shadow-md w-full h-auto object-cover" src="IMG/visor-ccaa-preview.png"/>
   </div>
 </div>
 
@@ -322,15 +324,15 @@
       <!-- Comparativa multitemporal Sentinel-2 -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
         <div>
-          <img alt="Antes del incendio" src="sentinel_2023-04-11.png" class="rounded shadow"/>
+          <img alt="Antes del incendio" src="IMG/sentinel_2023-04-11.png" class="rounded shadow"/>
           <p class="text-center text-sm text-gray-400 mt-2">Antes del incendio (11/04/2023)</p>
         </div>
         <div>
-          <img alt="Durante el incendio" src="sentinel_2023-05-19.png" class="rounded shadow"/>
+          <img alt="Durante el incendio" src="IMG/sentinel_2023-05-19.png" class="rounded shadow"/>
           <p class="text-center text-sm text-gray-400 mt-2">Durante el incendio (19/05/2023)</p>
         </div>
         <div>
-          <img alt="Después del incendio" src="sentinel_2023-06-25.png" class="rounded shadow"/>
+          <img alt="Después del incendio" src="IMG/sentinel_2023-06-25.png" class="rounded shadow"/>
           <p class="text-center text-sm text-gray-400 mt-2">Después del incendio (25/06/2023)</p>
         </div>
       </div>
@@ -341,11 +343,11 @@
       </p>
       <div class="flex flex-col md:flex-row items-start gap-6 my-8">
         <div class="flex-1">
-          <img alt="Mapa dNBR Las Hurdes" class="w-full max-w-full rounded shadow-md" src="dnbr_lashurdes.png"/>
+          <img alt="Mapa dNBR Las Hurdes" class="w-full max-w-full rounded shadow-md" src="IMG/dnbr_lashurdes.png"/>
           <p class="text-center text-sm text-gray-400 mt-2">Mapa de severidad del incendio (dNBR)</p>
         </div>
         <div class="w-full md:w-auto flex justify-center">
-          <img alt="Leyenda dNBR" class="w-48 md:w-52 rounded" src="dnbr_leyenda.png"/>
+          <img alt="Leyenda dNBR" class="w-48 md:w-52 rounded" src="IMG/dnbr_leyenda.png"/>
         </div>
       </div>
 
@@ -356,11 +358,11 @@
       <!-- Comparativa LiDAR -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start my-10">
         <div class="flex flex-col items-center">
-          <img alt="LiDAR zona quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="lidar_zona_incendio.png"/>
+          <img alt="LiDAR zona quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="IMG/lidar_zona_incendio.png"/>
           <p class="text-center text-sm text-gray-400 mt-2">Datos LiDAR – Zona quemada</p>
         </div>
         <div class="flex flex-col items-center">
-          <img alt="LiDAR zona no quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="lidar_zona_referencia.png"/>
+          <img alt="LiDAR zona no quemada" class="w-full max-w-[500px] h-[300px] object-cover rounded shadow-md" src="IMG/lidar_zona_referencia.png"/>
           <p class="text-center text-sm text-gray-400 mt-2">Datos LiDAR – Zona no quemada</p>
         </div>
       </div>
@@ -411,14 +413,17 @@
   </div>
 
   <div class="col-span-1">
-    <img alt="Visualización LiDAR" class="rounded-lg shadow-md w-full h-auto object-cover" src="co2-lidar-bosque.png" />
+    <img alt="Visualización LiDAR" class="rounded-lg shadow-md w-full h-auto object-cover" src="IMG/co2-lidar-bosque.png" />
   </div>
 </div>
+  </div>
   </div>
 </section>
 
 <!-- Nueva sección: Análisis técnico -->
-<section class="py-24 px-6 bg-zinc-950" id="analisis">
+<section class="relative py-24 px-6 bg-zinc-950 overflow-hidden" id="analisis">
+  <div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center" style="background-image: url('IMG/fondo-difuminado.png');"></div>
+  <div class="relative z-10">
   <div class="max-w-6xl mx-auto">
     <h3 class="text-3xl font-semibold mb-10 text-center text-blue-400">Análisis técnico</h3>
 
@@ -436,9 +441,10 @@
         </a>
       </div>
       <div class="col-span-1">
-        <img alt="Transición energética" class="rounded-lg shadow-md w-full h-auto object-cover" src="energia.png"/>
+        <img alt="Transición energética" class="rounded-lg shadow-md w-full h-auto object-cover" src="IMG/energia.png"/>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
