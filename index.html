@@ -21,7 +21,10 @@
   </style>
  </head>
  <body class="bg-zinc-900 text-white">
-  <div x-data="{ loading: true }" x-init="window.onload = () => loading = false">
+  <div x-data="{ loading: true }" x-init="
+  window.addEventListener('load', () => loading = false)
+">
+
   <!-- Loader visible al inicio -->
   <div
     x-show="loading"
