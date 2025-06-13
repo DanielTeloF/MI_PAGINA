@@ -26,11 +26,18 @@
 ">
 
   <!-- Loader visible al inicio -->
-  <div
-    x-show="loading"
-    x-transition.opacity
-    class="fixed inset-0 z-50 flex items-center justify-center bg-zinc-900 text-white"
-  >
+<div
+  x-show="loading"
+  x-transition:leave="transition-opacity duration-700"
+  x-transition:leave-start="opacity-100"
+  x-transition:leave-end="opacity-0"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-zinc-900 text-white"
+>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
     <!-- Icono animado -->
     <svg class="animate-spin h-10 w-10 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -505,5 +512,19 @@
   </footer>
     </div> <!-- cierra el x-show="!loading" -->
 </div> <!-- cierra el x-data="{ loading: true }" -->
+<div 
+  x-data="{ show: false }"
+  x-init="window.addEventListener('scroll', () => show = window.scrollY > 300)"
+>
+  <button
+    x-show="show"
+    x-transition
+    @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    class="fixed bottom-6 right-6 p-3 bg-green-600 text-white rounded-full shadow-md hover:bg-green-700 transition"
+    title="Volver arriba"
+  >
+    ↑
+  </button>
+</div>
  </body>
 </html>
