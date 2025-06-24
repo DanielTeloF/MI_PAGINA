@@ -195,6 +195,24 @@
 El flujo de trabajo integra procesamiento geoespacial, predicción multiclase, postprocesado con filtros espaciales y técnicas de mejora de precisión (suavizado, recorte por área de interés y métricas por clase). Se analizó el rendimiento del modelo mediante matriz de confusión, métricas de F1-score y análisis visual.
     </p>
 
+    <p class="text-sm text-gray-300 mt-2">
+  Proyecto avanzado de análisis geoespacial con Python que incluye el entrenamiento de un modelo de inteligencia artificial para predecir cambios en la cobertura del suelo (CLC) entre 2018 y 2021. Se utilizaron datasets raster oficiales como base de entrenamiento, y el modelo generado fue evaluado mediante comparación directa con datos de referencia. El flujo de trabajo integra procesamiento geoespacial, predicción multiclase, postprocesado con filtros espaciales y técnicas de mejora de precisión (suavizado, recorte por área de interés y métricas por clase). Se analizó el rendimiento del modelo mediante matriz de confusión, métricas de F1-score y análisis visual.
+  <p class="mt-2 font-semibold text-gray-200">
+  Para explorar a fondo este proyecto,
+  recomiendo descargar el informe completo, donde se detalla cada etapa del proceso.
+</p>
+</p>
+
+<!-- BOTÓN DESCARGAR PDF -->
+<div class="mt-3">
+  <a href="C:\Users\Josem\OneDrive\Documentos\GitHub\MI_PAGINA\ARCHIVOS/informe_proyecto_SIG_IA.pdf" target="_blank" download class="inline-flex items-center text-sm text-blue-400 hover:underline">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+    </svg>
+    🟥 Descargar informe completo (PDF)
+  </a>
+</div>
+
     <div class="mt-2">
       <button @click="expanded = !expanded" class="text-green-400 hover:text-green-300 transition font-semibold">
         <span x-show="!expanded">Mostrar más ↓</span>
@@ -213,6 +231,7 @@ A través de este proceso, se buscó no solo validar la predicción de cambios t
         <h4 class="text-green-400 font-semibold">🧠 Aclaraciones</h4>
         <ul class="list-disc ml-6 space-y-1">
           <li>Este proyecto ha sido desarrollado de forma personal, con fines formativos y exploratorios.</li>
+          <li>Para explorar a fondo este proyecto, recomiendo descargar el informe completo, donde se detalla cada etapa del proceso.</li>
           <li>El modelo de IA utilizado cuenta con un entrenamiento limitado y su capacidad de generalización es reducida.</li>
           <li>Existen restricciones técnicas relacionadas con el hardware, disponibilidad de datos, tiempos de procesamiento y consumo de memoria.</li>
           <li>Se ha prestado especial atención al tratamiento de datos, aunque podrían persistir errores o imprecisiones.</li>
@@ -281,33 +300,59 @@ A través de este proceso, se buscó no solo validar la predicción de cambios t
   </ul>
 </div>
 
+
+
+
+<div class="space-y-2">
+  <h4 class="text-green-400 font-semibold mt-8">📂 Archivos generados</h4>
+  <ul class="list-disc ml-6 text-sm text-gray-300 space-y-2">
+    <li>🛰️ <strong>Índices espectrales:</strong> archivos <code>.tif</code> generados a partir de las bandas (NDVI, MSAVI, SAVI, etc.).</li>
+    <li>🗂️ <strong>Parquets:</strong> tablas estructuradas con variables predictoras y etiquetas de entrenamiento.</li>
+    <li>🤖 <strong>Modelo IA:</strong> archivo <code>XGBoost</code> entrenado y guardado para reutilización.</li>
+    <li>🖼️ <strong>Predicción base:</strong> raster resultante de la predicción (<code>prediccion_XXX.tif</code>).</li>
+    <li>🎯 <strong>Predicción suavizada:</strong> raster tras aplicar filtro espacial 3x3 (<code>prediccion_XXX_suavizada.tif</code>).</li>
+    <li>📊 <strong>Matriz de confusión:</strong> visualización en imagen PNG con resultados de precisión multiclase.</li>
+    <li>📈 <strong>Métricas adicionales:</strong> CSVs con F1-score, precisión, recall por clase, y gráficos comparativos.</li>
+  </ul>
+</div>
+
+
+
       <div class="space-y-2">
         <h4 class="text-green-400 font-semibold">📈 Resultados</h4>
         <ul class="list-disc ml-9 space-y-1">
-          <li>Precisión inicial del modelo IA: 28%</li>
-          <li>Con suavizado: 30%</li>
-          <li>Tras suavizado + recorte geográfico: <strong class="text-green-400">36%</strong></li>
+          <li>Precisión del modelo IA: 33.99%%</li>
+          <li>Con suavizado: 36.00%</li>
         </ul>
       </div>
+
 
       <div class="space-y-2">
         <h4 class="text-green-400 font-semibold">🛠️ Herramientas utilizadas</h4>
-        <p>Python, rasterio, numpy, scipy, pandas, geopandas, scikit-learn, matplotlib, seaborn.</p>
+        <p>Python, Rasterio, XGBoost, NumPy, Pandas, GeoPandas, scikit-learn, Matplotlib, Seaborn.</p>
       </div>
 
-      <div class="space-y-2">
-        <h4 class="text-green-400 font-semibold">📂 Archivos generados</h4>
-        <ul class="list-disc ml-6 space-y-1">
-          <li>matriz_ia_original.png / matriz_ia_suavizada.png</li>
-          <li>comparacion_f1.png</li>
-          <li>metricas_ia_original.csv / metricas_ia_suavizada.csv</li>
-        </ul>
-      </div>
-
-      <div class="space-y-2">
-        <h4 class="text-green-400 font-semibold">💡 Conclusión</h4>
-        <p>Este proyecto demuestra una cadena completa de análisis espacial con IA, tratamiento de datos geográficos y evaluación estadística rigurosa. Ejemplo ideal para portfolios técnicos en SIG e IA aplicada.</p>
-      </div>
+<div class="space-y-4 mt-8">
+  <h4 class="text-green-400 text-xl font-semibold">🧠 Conclusión</h4>
+  <p class="text-gray-300 text-sm leading-relaxed">
+    Gracias a este proyecto he podido experimentar de primera mano el <strong>potencial de los modelos de inteligencia artificial aplicados al análisis geoespacial</strong> y, en particular, al estudio de cambios en el uso del suelo mediante datos SIG. Aunque los resultados de predicción han alcanzado una precisión aproximada del <strong>35%</strong>, este rendimiento ha permitido <strong>comprender mejor las limitaciones del modelo</strong>, especialmente en lo relativo a su <strong>capacidad de generalización</strong>. El bajo desempeño se debe principalmente a la <strong>diferencia entre las zonas utilizadas para el entrenamiento y la zona sobre la que se realizó la predicción</strong>, así como a un <strong>entrenamiento limitado</strong> en relación con la complejidad del problema abordado.
+  </p>
+  <p class="text-gray-300 text-sm leading-relaxed">
+    Durante el desarrollo, he comprendido:
+    <ul class="list-disc ml-6 mt-2 text-gray-300 text-sm space-y-1">
+      <li>La <strong>complejidad real</strong> del flujo completo: desde la obtención de datos satelitales hasta la evaluación final del modelo.</li>
+      <li>La importancia de un <strong>tratamiento riguroso y consistente de los datos</strong> para evitar errores acumulativos.</li>
+      <li>Las <strong>exigencias estructurales de los modelos de IA</strong>, tanto en los datos de entrada como de salida.</li>
+      <li>La necesidad de <strong>elegir el algoritmo de aprendizaje más adecuado</strong> para cada tarea específica.</li>
+      <li>El valor de crear <strong>scripts sólidos en Python</strong> para automatizar procesos, asegurar reproducibilidad y minimizar fallos.</li>
+      <li>La <strong>importancia de la visualización geoespacial</strong> para validar e interpretar los resultados del modelo.</li>
+      <li>Y, en general, la necesidad de mantener una <strong>estructura clara y ordenada</strong> tanto para el flujo de trabajo como para el aprendizaje del modelo.</li>
+    </ul>
+  </p>
+  <p class="text-gray-300 text-sm leading-relaxed">
+    Este proyecto ha sido una primera aproximación muy enriquecedora, que sienta las bases para afrontar con mayor criterio y profundidad futuros trabajos de inteligencia artificial aplicada al análisis del territorio.
+  </p>
+</div>
 
       <!-- Botón para cerrar -->
       <div class="mt-4">
