@@ -5,17 +5,17 @@ import numpy as np
 # === RUTAS DE ENTRADA ===
 CLC_PATHS = {
     "rivas": {
-        "clc18": r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Datos\TIFs\CorineRecortado\CLC18_rivas.tif",
-        "clc21": r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Datos\TIFs\CorineRecortado\CLC21_rivas.tif",
+        "clc18": r"📂 Introduzca la ruta del archivo TIFF correspondiente",
+        "clc21": r"📂 Introduzca la ruta del archivo TIFF correspondiente",
     },
     "donana": {
-        "clc18": r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Datos\TIFs\CorineRecortado\CLC18_donana.tif",
-        "clc21": r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Datos\TIFs\CorineRecortado\CLC21_donana.tif",
+        "clc18": r"📂 Introduzca la ruta del archivo TIFF correspondiente",
+        "clc21": r"📂 Introduzca la ruta del archivo TIFF correspondiente",
     }
 }
 
 # === RUTA DE SALIDA ===
-output_dir = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Datos\TIFs\MapaDeCambio"
+output_dir = r"📁 Introduzca la ruta del directorio correspondiente"
 os.makedirs(output_dir, exist_ok=True)
 
 # === FUNCION PRINCIPAL ===

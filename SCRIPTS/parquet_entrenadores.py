@@ -5,24 +5,24 @@ import rasterio
 
 # === RUTAS ===
 
-# Entradas Doñana
-RUTA_BANDAS_2018_D = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/Bandas/donana2018"
-RUTA_BANDAS_2021_D = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/Bandas/donana2021"
-RUTA_INDICES_2018_D = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/Indices/donana2018"
-RUTA_INDICES_2021_D = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/Indices/donana2021"
-RUTA_CAMBIO_D = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/MapaDeCambio/donana_mapa_cambio.tif"
+# Entradas zona1
+RUTA_BANDAS_2018_D = r"📁 Introduzca la ruta del directorio correspondiente a bandas zona 1 año 1"
+RUTA_BANDAS_2021_D = r"📁 Introduzca la ruta del directorio correspondiente a bandas zona 1 año 2"
+RUTA_INDICES_2018_D = r"📁 Introduzca la ruta del directorio correspondiente a indices zona 1 año 1"
+RUTA_INDICES_2021_D = r"📁 Introduzca la ruta del directorio correspondiente a indices zona 1 año 2"
+RUTA_CAMBIO_D = r"📂 Introduzca la ruta del archivo TIFF correspondiente"
 
-# Entradas Rivas
-RUTA_BANDAS_2018_R = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/Bandas/rivas2018"
-RUTA_BANDAS_2021_R = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/Bandas/rivas2021"
-RUTA_INDICES_2018_R = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/Indices/rivas2018"
-RUTA_INDICES_2021_R = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/Indices/rivas2021"
-RUTA_CAMBIO_R = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/TIFs/MapaDeCambio/rivas_mapa_cambio.tif"
+# Entradas zon2
+RUTA_BANDAS_2018_R = r"📁 Introduzca la ruta del directorio correspondiente a bandas zona 2 año 1"
+RUTA_BANDAS_2021_R = r"📁 Introduzca la ruta del directorio correspondiente a bandas zona 2 año 2"
+RUTA_INDICES_2018_R = r"📁 Introduzca la ruta del directorio correspondiente a indices zona 2 año 1"
+RUTA_INDICES_2021_R = r"📁 Introduzca la ruta del directorio correspondiente a indices zona 2 año 2"
+RUTA_CAMBIO_R = r"📂 Introduzca la ruta del archivo TIFF correspondiente"
 
 # Salidas
-RUTA_DONANA_SALIDA = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/Entrenamiento/donana_dataset_filtrado.parquet"
-RUTA_RIVAS_SALIDA = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/Entrenamiento/rivas_dataset_filtrado.parquet"
-RUTA_COMBINADO_SALIDA = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Datos/Entrenamiento/combined_donana_rivas_filtrado.parquet"
+RUTA_DONANA_SALIDA = r"📂 Introduzca la ruta del archivo Parquet correspondiente"
+RUTA_RIVAS_SALIDA = r"📂 Introduzca la ruta del archivo Parquet correspondiente"
+RUTA_COMBINADO_SALIDA = r"📂 Introduzca la ruta del archivo Parquet correspondiente"
 
 UMBRAL_MINIMO = 5
 

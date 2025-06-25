@@ -9,7 +9,7 @@ import geopandas as gpd
 from rasterio.mask import mask
 
 # === CONFIGURACIÓN ===
-ruta_base = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\Prediccion"
+ruta_base = r"📁 Introduzca la ruta del directorio correspondiente"
 salidas_base = ruta_base
 
 tif_ref = os.path.join(ruta_base, "Cambio_CLC.tif")

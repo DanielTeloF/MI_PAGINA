@@ -1,3 +1,4 @@
+
 import os
 import rasterio
 from rasterio.warp import calculate_default_transform, reproject, Resampling
@@ -6,12 +7,11 @@ import fiona
 import numpy as np
 import tempfile
 
-# === PARÁMETROS ===
-input_folder = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\Sentinel\Sentinel2021"
-output_folder = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\TIFs\Bandas2021"
-geojson_path = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\Sentinel\ribarroja.geojson"
+# === ENTRADA DEL USUARIO ===
+input_folder = input("📁 Introduzca la carpeta con los archivos JP2: ").strip()
+output_folder = input("💾 Introduzca la carpeta de salida para los archivos TIF: ").strip()
+geojson_path = input("🌍 Introduzca la ruta al archivo GeoJSON del área de recorte: ").strip()
 
-# Crear carpeta salida si no existe
 os.makedirs(output_folder, exist_ok=True)
 
 # Leer geometría del GeoJSON
@@ -122,6 +122,3 @@ for f in final_outputs:
             print(f"❌ Inconsistencia encontrada en: {f}")
         else:
             print(f"✅ {os.path.basename(f)} consistente")
-
-
-

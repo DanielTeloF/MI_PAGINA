@@ -4,13 +4,13 @@ import pandas as pd
 import rasterio
 
 # === RUTAS DE ENTRADA ===
-RUTA_BANDAS_2018 = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\TIFs\Bandas2018"
-RUTA_BANDAS_2021 = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\TIFs\Bandas2021"
-RUTA_INDICES_2018 = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\TIFs\Indices\Indices2018"
-RUTA_INDICES_2021 = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\TIFs\Indices\Indices2021"
+RUTA_BANDAS_2018 = r"📁 Introduzca la ruta del directorio correspondiente a bandas año 1"
+RUTA_BANDAS_2021 = r"📁 Introduzca la ruta del directorio correspondiente a bandas año 2"
+RUTA_INDICES_2018 = r"📁 Introduzca la ruta del directorio correspondiente indices año 1"
+RUTA_INDICES_2021 = r"📁 Introduzca la ruta del directorio correspondiente indices año 2"
 
 # === SALIDA ===
-RUTA_SALIDA_PARQUET = r"C:/Users/Josem/OneDrive/Escritorio/Proyecto_IA/Prediccion_Valencia/Dataset/Datasetribarroja_sin_clases.parquet"
+RUTA_SALIDA_PARQUET = r"📂 Introduzca la ruta del archivo Parquet correspondiente"
 
 # === FUNCIÓN PARA CARGAR BANDAS ===
 def cargar_capas(ruta):

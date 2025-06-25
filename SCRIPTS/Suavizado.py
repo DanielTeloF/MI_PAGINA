@@ -3,10 +3,9 @@ import numpy as np
 from scipy.ndimage import generic_filter
 import os
 
-# === 1. RUTAS ===
-ruta_base = r"C:\Users\Josem\OneDrive\Escritorio\Proyecto_IA\Prediccion_Valencia\Prediccion"
-archivo_original = os.path.join(ruta_base, "prediccion_ribarroja.tif")
-archivo_suavizado = os.path.join(ruta_base, "prediccion_ribarroja_suavizada.tif")
+# === 1. INPUT DEL USUARIO ===
+archivo_original = input("📂 Introduzca la ruta del archivo .tif de predicción a suavizar: ").strip()
+archivo_suavizado = input("💾 Introduzca la ruta donde desea guardar el archivo suavizado: ").strip()
 
 # === 2. FUNCIÓN DE MODO COMPATIBLE ===
 def moda_entera(valores):
@@ -18,7 +17,7 @@ with rasterio.open(archivo_original) as src:
     data = src.read(1)
     perfil = src.profile
 
-    print("🧹 Aplicando suavizado...")
+    print("🧹 Aplicando suavizado 3x3...")
     data_suavizada = generic_filter(data, moda_entera, size=3, mode='nearest')
 
 # === 4. GUARDAR NUEVO TIF ===
